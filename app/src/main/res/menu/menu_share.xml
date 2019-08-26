@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/berbagi"
+        android:icon="@drawable/icon_bagi"
+        android:title="Bagi"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/simpan"
+        android:icon="@drawable/icon_like"
+        android:title="Simpan"
+        app:showAsAction="ifRoom" />
+
 
 </menu>
