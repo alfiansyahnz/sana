@@ -1,4 +1,4 @@
 package com.sana.adapter;
 
-public class Donasi {
+public class DonasiAdapter {
 }

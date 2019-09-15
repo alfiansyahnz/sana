@@ -29,6 +29,4 @@ public class NotificationsFragment extends Fragment {
                 textView.setText(s);
             }
         });
-        return root;
-    }
-}
+        ret

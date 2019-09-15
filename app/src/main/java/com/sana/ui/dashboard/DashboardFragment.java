@@ -29,6 +29,4 @@ public class DashboardFragment extends Fragment {
                 textView.setText(s);
             }
         });
-        return root;
-    }
-}
+        ret
