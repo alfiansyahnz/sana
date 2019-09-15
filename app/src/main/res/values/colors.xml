@@ -4,5 +4,9 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorTrans">#0B9476</color>
-    <color name="colorWhite">#FFFF</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorSubTitle">#757575</color>
+    <color name="colorBlueGreen">#0dac8b</color>
+    <color name="colorKuning">#f9ca24</color>
 </resources>

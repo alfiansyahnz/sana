@@ -1,14 +1,14 @@
-package com.sana.ui.beranda;
+package com.sana.ui.akun;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
-public class BerandaViewModel extends ViewModel {
+public class AkunViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public BerandaViewModel() {
+    public AkunViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is dashboard fragment");
     }

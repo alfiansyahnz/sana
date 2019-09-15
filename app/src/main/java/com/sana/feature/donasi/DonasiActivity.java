@@ -1,4 +1,4 @@
-package com.sana.feature;
+package com.sana.feature.donasi;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.sana.adapter;
+package com.sana.models;
 
 public class Donasi {
 

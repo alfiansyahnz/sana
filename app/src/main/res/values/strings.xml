@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">SANA</string>
     <string name="deskripsi">Bertepatan dengan Hari Bumi 22 April 2008 lalu dan tren isu Pemanasan Global yang tengah berkumandang di Indonesia, distributor film Jive Entertainment bersama jaringan sinema Blitz Megaplex Jakarta dan Bandung memutar film dokumenter EARTH selama hampir 2 bulan.</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_akun">Akun</string>
+    <string name="title_riwayat">Riwayat</string>
+    <string name="title_beranda">Beranda</string>
+    <string name="title_komunitas">Komunitas</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="donasi_sekarang">Donasi Sekarang</string>
+    <string name="volunteer">Volunteer</string>
 </resources>

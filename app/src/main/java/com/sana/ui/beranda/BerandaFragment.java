@@ -1,4 +1,4 @@
-package com.sana.ui.dashboard;
+package com.sana.ui.beranda;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,17 +13,17 @@ import android.arch.lifecycle.ViewModelProviders;
 
 import com.sana.R;
 
-public class DashboardFragment extends Fragment {
+public class BerandaFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private BerandaViewModel mBerandaViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        mBerandaViewModel =
+                ViewModelProviders.of(this).get(BerandaViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_beranda, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
-        dashboardViewModel.getText().observe(this, new Observer<String>() {
+        mBerandaViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
