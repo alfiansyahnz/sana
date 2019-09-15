@@ -1,13 +1,13 @@
-package com.sana;
+package com.sana.feature;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class DonationActivity extends AppCompatActivity {
+public class DonasiActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_donation);
+        setContentView(R.layout.activity_donasi);
     }
 }
