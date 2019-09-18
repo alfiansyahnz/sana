@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountActivity.RegisterActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daftar"
+            android:textSize="30sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="37dp"
+            android:layout_marginTop="230dp"
+            android:textColor="@color/bluegreen"
+            android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/eye2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="38dp"
+        android:layout_marginTop="480dp"
+        android:src="@drawable/eye2"
+        android:onClick="ShowHidePass" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="259dp"
+            android:background="@drawable/bg_daftar"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:layout_marginTop="44dp"
+            android:text="NAMA PENGGUNA"
+            android:textSize="12sp"/>
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="32dp"
+            android:hint="@string/username"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:drawableLeft="@drawable/ic_person_outline_black_24dp"
+            android:drawablePadding="10dp"
+            android:textColor="@color/bluegreen"
+            android:textColorHint="@color/input_hint"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:layout_marginTop="12dp"
+            android:text="EMAIL"
+            android:textSize="12sp"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="32dp"
+            android:hint="@string/email"
+            android:textSize="14sp"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:drawableLeft="@drawable/ic_email_black_24dp"
+            android:drawablePadding="10dp"
+            android:textColor="@color/bluegreen"
+            android:textColorHint="@color/input_hint"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:layout_marginTop="12dp"
+            android:text="KATA SANDI"
+            android:textSize="12sp"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="32dp"
+            android:focusableInTouchMode="true"
+            android:hint="@string/hint_password"
+            android:textSize="14sp"
+            android:imeActionId="@+id/login"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+            android:drawablePadding="10dp"
+            android:textColor="@color/bluegreen"
+            android:textColorHint="@color/input_hint" />
+
+            <Button
+                android:id="@+id/sign_up_button"
+                style="?android:textAppearanceSmall"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="290dp"
+                android:layout_height="42dp"
+                android:background="@drawable/roundbutton"
+                android:text="@string/action_sign_in_short"
+                android:textColor="@android:color/white"
+                />
+
+            <!-- Link to Login Screen -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_regist"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                >
+
+                    <TextView
+                        android:textColor="@color/colorGray"
+                        android:text="Sudah Punya Akun?"
+                        android:textSize="12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/link_login"
+                        android:textColor="@color/bluegreen"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="12sp"
+                        android:text="Masuk!"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_vertical"
+                android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/slide_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="128dp"
+        app:srcCompat="@drawable/on_1" />
+
+    <TextView
+        android:id="@+id/slide_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slide_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:textColor="#fff"
+        android:fontFamily="@font/product_sans_bold"
+        android:text="DONASI"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:textColor="#fff"
+        android:fontFamily="@font/product_sans_reguler"
+        android:id="@+id/slide_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slide_heading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+        android:paddingRight="43dp"
+        android:paddingLeft="43dp"
+
+
+        android:text="Menyediakan wadah untuk para donatur yang
+ingin mendonasikan uangnya sebagai
+salah satu bentuk kepedulian terhadap
+lingkungan"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="3dp"
+        android:textSize="14sp" />
+
+</RelativeLayout>

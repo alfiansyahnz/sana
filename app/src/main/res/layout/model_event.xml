@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:gravity="center_horizontal"
+    android:id="@+id/bg_challenge">
+
+    <android.support.v7.widget.CardView
+
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_view"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="10dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="#0dac8b"
+
+            >
+
+            <ImageView
+                android:layout_width="112dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:id="@+id/img_event"
+                android:src="@drawable/hiu"
+                />
+
+            <TextView
+                android:id="@+id/tv_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:layout_marginLeft="8dp"
+                android:textColor="#f9ca24"
+                android:lineSpacingExtra="11sp"
+                android:layout_toRightOf="@id/img_event"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/product_sans_reguler"
+                android:text="#WWFIndonesia"
+                />
+
+            <TextView
+                android:id="@+id/tv_tahun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:layout_marginRight="8dp"
+                android:textColor="#f9ca24"
+                android:lineSpacingExtra="11sp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/product_sans_reguler"
+                android:layout_alignParentRight="true"
+                android:text="2019"
+                />
+
+            <TextView
+                android:id="@+id/tv_challenge_judul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_group"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_toRightOf="@id/img_event"
+                android:fontFamily="@font/product_sans_bold"
+                android:lineSpacingExtra="3sp"
+                android:maxLines="2"
+                android:text="Beasiswa Film Pendek:"
+                android:textColor="#ffffff"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_hari"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_below="@id/tv_challenge_judul"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="11dp"
+                android:layout_toRightOf="@id/tv_tanggal"
+                android:src="@drawable/ic_hari" />
+
+            <TextView
+                android:id="@+id/tv_hari"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:fontFamily="@font/product_sans_reguler"
+                android:textColor="#bde8df"
+                android:layout_below="@id/tv_challenge_judul"
+                android:layout_toRightOf="@id/img_hari"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="4dp"
+                android:lineSpacingExtra="6sp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="Beasiswa"
+                />
+
+            <ImageView
+                android:id="@+id/img_tempat"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_below="@id/img_hari"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/tv_bulan"
+                android:src="@drawable/ic_hari" />
+
+            <TextView
+                android:id="@+id/tv_tempat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_hari"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="15dp"
+                android:layout_toRightOf="@id/img_tempat"
+                android:ellipsize="end"
+                android:fontFamily="@font/product_sans_reguler"
+                android:lineSpacingExtra="6sp"
+                android:maxLines="2"
+                android:text="Beasiswa"
+                android:textColor="#bde8df"
+                android:textSize="10dp" />
+
+            <ImageView
+                android:id="@+id/img_waktu"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_below="@id/tv_challenge_judul"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="11dp"
+                android:layout_toRightOf="@id/tv_hari"
+                android:src="@drawable/ic_hari" />
+
+            <TextView
+                android:id="@+id/tv_waktu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_challenge_judul"
+                android:layout_marginStart="4dp"
+                android:layout_toRightOf="@id/img_waktu"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/product_sans_reguler"
+                android:lineSpacingExtra="6sp"
+                android:maxLines="2"
+                android:text="Beasiswa"
+                android:textColor="#bde8df"
+                android:textSize="10dp" />
+
+            <!--<ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:id="@+id/img_like"
+                android:src="@drawable/ic_suka"
+                android:layout_toRightOf="@id/img_challenge"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/tv_challenge_desc"
+                />
+
+            <TextView
+                android:id="@+id/tv_suka"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_challenge_desc"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="9dp"
+                android:layout_toRightOf="@id/img_like"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="21"
+                android:textColor="#f9ca24"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:id="@+id/img_bagi"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_bagi"
+                android:layout_toRightOf="@id/tv_suka"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/tv_challenge_desc"
+                />
+
+            <TextView
+                android:id="@+id/tv_bagi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_challenge_desc"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="9dp"
+                android:layout_toRightOf="@id/img_bagi"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="10"
+                android:textColor="#f9ca24"
+                android:textSize="12dp" />-->
+
+
+            <Button
+                android:layout_marginTop="16dp"
+                android:layout_width="54dp"
+                android:layout_height="20dp"
+                android:fontFamily="@font/product_sans_reguler"
+                android:textAllCaps="false"
+                android:text="Ikuti"
+                android:id="@+id/cl_selengkapnya"
+                android:layout_toRightOf="@id/img_event"
+                android:background="@drawable/bg_round_challenge"
+                android:layout_marginLeft="8dp"
+                android:textSize="10dp"
+                android:layout_below="@id/tv_bulan"
+                />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="18dp"
+                android:background="@drawable/bg_tanggal"
+                android:layout_below="@id/tv_challenge_judul"
+                android:layout_toRightOf="@id/img_event"
+                android:layout_marginLeft="8dp"
+                android:textColor="#f9ca24"
+                android:text="23"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:layout_marginTop="8dp"
+                android:id="@+id/tv_tanggal"
+                />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="18dp"
+                android:background="@drawable/bg_bulan"
+                android:layout_below="@id/tv_tanggal"
+                android:layout_toRightOf="@id/img_event"
+                android:layout_marginLeft="8dp"
+                android:text="Mei"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:id="@+id/tv_bulan"
+                />
+
+
+        </RelativeLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

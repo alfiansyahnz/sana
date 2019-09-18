@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0dac8b"
+    tools:context=".activity.OnBoardingActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/slideViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        >
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+
+        android:id="@+id/dotsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slideViewPager"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <!--<android.support.design.widget.TabLayout
+        app:tabBackground="@drawable/indicator_seledtor"
+        android:id="@+id/dotsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slideViewPager"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        >
+
+    </android.support.design.widget.TabLayout>-->
+    <Button
+        android:id="@+id/btn_prev"
+        android:layout_width="90dp"
+        android:layout_height="42dp"
+        android:text="Kembali"
+        android:textSize="14dp"
+        android:textColor="#0dac8b"
+        android:fontFamily="@font/product_sans_bold"
+        android:visibility="invisible"
+        android:textAllCaps="false"
+        android:background="@drawable/bg_round"
+        android:layout_below="@+id/dotsLayout"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="90dp"
+        android:layout_height="42dp"
+        android:textSize="14dp"
+        android:fontFamily="@font/product_sans_bold"
+        android:text="Berikutnya"
+        android:textAllCaps="false"
+        android:textColor="#0dac8b"
+        android:background="@drawable/bg_round"
+        android:layout_below="@+id/dotsLayout"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        />
+
+    <Button
+        android:id="@+id/btn_mulai"
+        android:layout_width="90dp"
+        android:layout_height="42dp"
+        android:textSize="14dp"
+        android:fontFamily="@font/product_sans_bold"
+        android:text="Mulai"
+        android:visibility="invisible"
+        android:textAllCaps="false"
+        android:textColor="#0dac8b"
+        android:background="@drawable/bg_round"
+        android:layout_below="@+id/dotsLayout"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        />
+
+
+
+    <!--<android.support.design.widget.TabLayout
+        android:id="@+id/dotsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slideViewPager"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Left" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Center" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Right" />
+    </android.support.design.widget.TabLayout>-->
+
+</RelativeLayout>
