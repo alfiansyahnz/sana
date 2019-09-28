@@ -7,6 +7,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 
+import com.sana.OnBoardingActivity;
 import com.sana.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class SplashActivity extends AppCompatActivity {
         downtoup = AnimationUtils.loadAnimation(this,R.anim.downtoup);
         img_logo.setAnimation(mytransition);
         img_pohon.setAnimation(downtoup);
-        final Intent i = new Intent(this,OnBoardingActivity.class);
+        final Intent i = new Intent(this, OnBoardingActivity.class);
         Thread timer = new Thread(){
             public void run(){
                 try {

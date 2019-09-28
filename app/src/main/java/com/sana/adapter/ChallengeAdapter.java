@@ -11,10 +11,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+<<<<<<< HEAD
 import com.sana.feature.challenge.ChallengeActivity;
 import com.sana.feature.challenge.DetailChallenge;
 import com.sana.R;
 import com.sana.models.Challenge;
+=======
+import com.sana.feature.challenge.DetailChallenge;
+import com.sana.feature.challenge.ChallengeActivity;
+import com.sana.R;
+import com.sana.models.Challenge;
+
+>>>>>>> 11ceeef8410334199efc89ae6f19edcb46d922b1
 
 
 import java.util.List;
