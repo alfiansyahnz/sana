@@ -1,4 +1,4 @@
-package com.sana;
+package com.sana.feature.event;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.sana.R;
 import com.sana.adapter.EventAdapter;
-import com.sana.model.Model_Event;
+import com.sana.models.Event;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,7 +27,7 @@ public class EventActivity extends AppCompatActivity {
     private final String JSON_URL = "https://lanuginose-numbers.000webhostapp.com/event/index.php";
     private JsonArrayRequest request ;
     private RequestQueue requestQueue ;
-    private List<Model_Event> mListItem ;
+    private List<Event> mListItem ;
     private RecyclerView recyclerView ;
 
     @Override
@@ -58,7 +58,7 @@ public class EventActivity extends AppCompatActivity {
 
                     try {
                         jsonObject = response.getJSONObject(i) ;
-                        Model_Event model = new Model_Event() ;
+                        Event model = new Event() ;
                         model.setId(jsonObject.getString("id"));
                         model.setJudul(jsonObject.getString("judul"));
                         model.setWaktu(jsonObject.getString("waktu"));
@@ -96,7 +96,7 @@ public class EventActivity extends AppCompatActivity {
 
     }
 
-    private void setuprecyclerview(List<Model_Event> mListItem) {
+    private void setuprecyclerview(List<Event> mListItem) {
 
 
         EventAdapter myadapter2 = new EventAdapter(this,mListItem) ;

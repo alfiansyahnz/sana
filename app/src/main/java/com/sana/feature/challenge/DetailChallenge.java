@@ -1,4 +1,4 @@
-package com.sana;
+package com.sana.feature.challenge;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

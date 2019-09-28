@@ -5,8 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.google.firebase.codelab.friendlychat.Model.ListKomunitas;
+import com.sana.models.ListKomunitas;
 
 import java.util.ArrayList;
 
@@ -40,7 +39,5 @@ public class KomunitasAdapter extends RecyclerView.Adapter<KomunitasAdapter.View
             super(itemView);
         }
     }
-
-    public ViewHolder
 
 }

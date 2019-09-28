@@ -32,7 +32,7 @@
                 android:scaleType="centerCrop"
                 android:id="@+id/img_challenge"
                 android:src="@drawable/hiu"
-                android:transitionName="@string/transition_image"
+                android:transitionName="Image"
                 />
 
             <TextView

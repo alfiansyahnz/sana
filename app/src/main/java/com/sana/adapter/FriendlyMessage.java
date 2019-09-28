@@ -1,4 +1,4 @@
-package com.sana.feature.komunitas;
+package com.sana.adapter;
 
 public class FriendlyMessage {
 

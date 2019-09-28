@@ -1,4 +1,4 @@
-package com.google.firebase.codelab.friendlychat.FirebaseParticle;
+package com.sana.FirebaseParticle;
 
 import android.util.Log;
 

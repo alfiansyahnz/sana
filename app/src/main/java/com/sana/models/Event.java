@@ -1,6 +1,6 @@
-package com.sana.model;
+package com.sana.models;
 
-public class Model_Event {
+public class Event {
 
     private String id;
     private String judul;
@@ -15,9 +15,9 @@ public class Model_Event {
     private String deskripsi;
     private int gabung;
 
-    public Model_Event(){};
+    public Event(){};
 
-    public Model_Event(String id, String judul, String waktu, String img, String hari, String tempat, String tanggal, String bulan, String tahun, String group, String deskripsi, int gabung) {
+    public Event(String id, String judul, String waktu, String img, String hari, String tempat, String tanggal, String bulan, String tahun, String group, String deskripsi, int gabung) {
         this.id = id;
         this.judul = judul;
         this.waktu = waktu;

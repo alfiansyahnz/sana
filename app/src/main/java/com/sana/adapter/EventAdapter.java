@@ -12,21 +12,21 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.sana.activity.DetailEvent;
-import com.sana.activity.EventActivity;
+import com.sana.feature.event.DetailEvent;
+import com.sana.feature.event.EventActivity;
 import com.sana.R;
-import com.sana.model.Model_Event;
+import com.sana.models.Event;
 
 import java.util.List;
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder> {
 
     /*private Context mContext ;*/
-    private List<Model_Event> mEvent ;
+    private List<Event> mEvent ;
     private RequestOptions option;
 
 
-    public EventAdapter(EventActivity eventActivity, List<Model_Event> mEvent) {
+    public EventAdapter(EventActivity eventActivity, List<Event> mEvent) {
         /*this.mContext = mContext;*/
         this.mEvent = mEvent;
 
@@ -61,7 +61,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
     @Override
     public void onBindViewHolder (final MyViewHolder holder, int position){
 
-        final Model_Event model_event = mEvent.get(position);
+        final Event model_event = mEvent.get(position);
 
         Glide.with(holder.itemView.getContext())
                 .load(mEvent.get(position).getImg()).apply(option)

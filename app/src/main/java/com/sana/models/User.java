@@ -1,4 +1,4 @@
-package com.example.firebaseuser.AccountActivity;
+package com.sana.models;
 
 public class User {
         String username, email, id;

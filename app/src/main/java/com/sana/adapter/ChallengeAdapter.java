@@ -11,10 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.sana.activity.ChallengeActivity;
-import com.sana.activity.DetailChallenge;
+import com.sana.feature.challenge.ChallengeActivity;
+import com.sana.feature.challenge.DetailChallenge;
 import com.sana.R;
-import com.sana.model.Model_Challenge;
+import com.sana.models.Challenge;
 
 
 import java.util.List;
@@ -28,7 +28,7 @@ import static android.media.CamcorderProfile.get;
 public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.MyViewHolder> {
 
     /*private Context mContext ;*/
-    private List<Model_Challenge> mData ;
+    private List<Challenge> mData ;
     private RequestOptions option;
    /* private ItemClickCallBack itemClickCallBack;
 
@@ -39,7 +39,7 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.MyVi
     }*/
 
 
-    public ChallengeAdapter(ChallengeActivity challengeActivity, List<Model_Challenge> mData) {
+    public ChallengeAdapter(ChallengeActivity challengeActivity, List<Challenge> mData) {
         /*this.mContext = mContext;*/
         this.mData = mData;
 
@@ -74,7 +74,7 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.MyVi
     @Override
     public void onBindViewHolder (final MyViewHolder holder, int position){
 
-        final Model_Challenge model_challenge = mData.get(position);
+        final Challenge model_challenge = mData.get(position);
 
        /* holder.view_container.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_transition_animations));
 */

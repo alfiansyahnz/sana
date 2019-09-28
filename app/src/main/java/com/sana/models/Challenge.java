@@ -1,6 +1,6 @@
 package com.sana.models;
 
-public class Model_Challenge {
+public class Challenge {
 
     private String id;
     private String judul;
@@ -10,9 +10,9 @@ public class Model_Challenge {
     private int bagi;
     private int gabung;
 
-    public Model_Challenge(){};
+    public Challenge(){};
 
-    public Model_Challenge(String id, String judul, String deskripsi, String img, Integer suka, Integer bagi, Integer gabung) {
+    public Challenge(String id, String judul, String deskripsi, String img, Integer suka, Integer bagi, Integer gabung) {
         this.id = id;
         this.judul = judul;
         this.deskripsi = deskripsi;

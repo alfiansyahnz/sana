@@ -1,4 +1,4 @@
-package com.google.firebase.codelab.friendlychat.Model;
+package com.sana.models;
 
 public class ListKomunitas {
     private String img_komunitas;

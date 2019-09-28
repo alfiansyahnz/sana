@@ -1,4 +1,4 @@
-package com.sana;
+package com.sana.feature.event;
 
 import android.content.Intent;
 import android.os.Bundle;

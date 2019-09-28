@@ -11,4 +11,45 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="donasi_sekarang">Donasi Sekarang</string>
     <string name="volunteer">Volunteer</string>
+
+    <!-- Ini Punya Adila -->
+    <string name="action_sign_in_short">Daftar</string>
+    <string name="email">Masukkan Email Anda</string>
+    <string name="username">Masukkan Nama Anda</string>
+    <string name="address">Masukkan Alamat Anda</string>
+    <string name="minimum_password">Kata sandi terlalu pendek, minimal 6 karakter</string>
+    <string name="unequal_password">Cek ulang</string>
+    <string name="auth_failed">Gagal. Periksa kembali email dan kata sandi, atau Daftar</string>
+    <string name="change_email">Ubah Email</string>
+    <string name="change_password">Ubah Password</string>
+    <string name="send_password_reset_email">Ubah kata sandi dan email</string>
+    <string name="remove_user">Hapus Akun</string>
+    <string name="new_pass">Kata Sandi Baru</string>
+    <string name="title_activity_profile">Profil Pengguna</string>
+    <string name="title_activity_login">Masuk</string>
+    <string name="hint_email">Masukkan Email Anda</string>
+    <string name="hint_password">Masukkan Kata Sandi Anda</string>
+    <string name="confirm_password">Masukkan Konfirmasi Kata Sandi</string>
+    <string name="hint_name">Nama</string>
+    <string name="btn_login">Masuk</string>
+    <string name="prompt_password">Masukkan kata sandi</string>
+    <string name="btn_link_to_register">Belum punya akun? Daftar.</string>
+    <string name="btn_link_to_login">Sudah punya akun? Masuk.</string>
+    <string name="title_activity_reset_password">Ubah Kata Sandi</string>
+    <string name="btn_forgot_password">Lupa kata sandi?</string>
+    <string name="btn_reset_password">Kirim</string>
+    <string name="btn_back">Kembali</string>
+    <string name="hint_new_email">Email Baru</string>
+    <string name="btn_change">Ubah</string>
+    <string name="btn_send">Kirim</string>
+    <string name="btn_remove">Hapus</string>
+    <string name="btn_sign_out">Keluar</string>
+    <string name="lbl_forgot_password">Atur Ulang Kata Sandi</string>
+    <string name="forgot_password_msg">Masukkan email yang Anda daftarkan untuk mengatur ulang kata sandi</string>
+    <string name="email_id">Email ID</string>
+    <string name="input_error">Wajib diisi</string>
+    <string name="input_error_email">Cek email</string>
+    <string name="default_web_client_id" translatable="false">556379094282-ddpntb0j08rlvmt1df6jjt500oiultfs.apps.googleusercontent.com</string>
+
+
 </resources>

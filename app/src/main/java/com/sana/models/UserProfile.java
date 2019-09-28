@@ -1,4 +1,4 @@
-package com.sana.feature.AccountActivity;
+package com.sana.models;
 
 /**
  * Created by Dheeraj_Kamath on 2/10/2018.

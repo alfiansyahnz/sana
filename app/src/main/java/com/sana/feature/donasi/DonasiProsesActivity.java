@@ -3,6 +3,8 @@ package com.sana.feature.donasi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.sana.R;
+
 public class DonasiProsesActivity extends AppCompatActivity {
 
     @Override

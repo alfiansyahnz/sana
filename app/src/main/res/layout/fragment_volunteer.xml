@@ -128,7 +128,7 @@
             android:textSize="12sp"
             android:textColor="#a8a8a8"
             android:lineSpacingExtra="8sp"
-            tools:text="Proyek ini adalah bagian dari program atau initiative lebih besar yang dikenal sebagai Program Wilayah Konservasi Tesso Nilo (Tesso Nilo Conservation Landscape Program), dimana di dalamnya termasuk 7 modul: Kejahatan Hutan (Forest Crime), Perlindungan Harimau (Tiger Protection), Pengelolaan Taman (Park Management), Konflik Manusia - Gajah (Human - Elephant Conflict), Hubungan Bisnis (Corporate Relations), Hubungan Komunitas (Community Relations), dan Pengelolaan Proyek (Project Management)."
+            android:text="Proyek ini adalah bagian dari program atau initiative lebih besar yang dikenal sebagai Program Wilayah Konservasi Tesso Nilo (Tesso Nilo Conservation Landscape Program), dimana di dalamnya termasuk 7 modul: Kejahatan Hutan (Forest Crime), Perlindungan Harimau (Tiger Protection), Pengelolaan Taman (Park Management), Konflik Manusia - Gajah (Human - Elephant Conflict), Hubungan Bisnis (Corporate Relations), Hubungan Komunitas (Community Relations), dan Pengelolaan Proyek (Project Management)."
             />
 
         <TextView
@@ -170,7 +170,7 @@
     </LinearLayout>
 
         <Button
-            android:id="@+id/btn_beli"
+            android:id="@+id/button_volunteer"
             style="@style/ButtonGeneral"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

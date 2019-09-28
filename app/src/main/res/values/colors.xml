@@ -9,4 +9,8 @@
     <color name="colorSubTitle">#757575</color>
     <color name="colorBlueGreen">#0dac8b</color>
     <color name="colorKuning">#f9ca24</color>
+    <color name="input_hint">#999999</color>
+    <color name="colorGray">#707070</color>
+    <color name="colorBProfil">#1a0dac8b</color>
+    <color name="colorYellow">#f9ca24</color>
 </resources>

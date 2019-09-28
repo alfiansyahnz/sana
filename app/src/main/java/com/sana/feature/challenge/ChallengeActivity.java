@@ -1,4 +1,4 @@
-package com.sana;
+package com.sana.feature.challenge;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +13,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.sana.R;
 import com.sana.adapter.ChallengeAdapter;
 import com.sana.models.Challenge;
 
