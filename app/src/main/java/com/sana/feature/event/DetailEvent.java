@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,6 +13,8 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.sana.R;
+
+import org.w3c.dom.Text;
 
 public class DetailEvent extends AppCompatActivity {
 
@@ -27,8 +30,14 @@ public class DetailEvent extends AppCompatActivity {
 
 
         String judul = getIntent().getStringExtra("judul");
+        String tempat = getIntent().getStringExtra("tempat");
         String deskripsi = getIntent().getStringExtra("deskripsi");
         String img = getIntent().getStringExtra("img_event");
+        String tanggal = getIntent().getStringExtra("tanggal");
+        String hari = getIntent().getStringExtra("hari");
+        String bulan = getIntent().getStringExtra("bulan");
+        String tahun = getIntent().getStringExtra("tahun");
+        String waktu = getIntent().getStringExtra("waktu");
         /*Integer suka = getIntent().getExtras().getInt("suka");
         Integer bagi = getIntent().getExtras().getInt("bagi");
         Integer gabung = getIntent().getExtras().getInt("gabung");*/
@@ -42,13 +51,28 @@ ChallengeAdapter recyclerViewAdapter = findViewById(R.id.recyclerTemp);
         TextView tv_judul = findViewById(R.id.judul_event);
         TextView tv_desk = findViewById(R.id.detail_deskripsi_event);
         ImageView img_event = findViewById(R.id.img_detail);
+        TextView tv_tangggal = findViewById(R.id.tv_tanggal);
+        TextView tv_hari = findViewById(R.id.tv_hari);
+        TextView tv_bulan = findViewById(R.id.tv_bulan);
+        TextView tv_tahun = findViewById(R.id.tv_tahun);
+        TextView tv_waktu = findViewById(R.id.tv_waktu);
+        TextView tv_tempat = findViewById(R.id.tv_tempat);
 
+
+        tv_waktu.setText(waktu);
+        tv_bulan.setText(bulan);
+        tv_hari.setText(hari);
+        tv_tangggal.setText(tanggal);
+        tv_tahun.setText(tahun);
         tv_judul.setText(judul);
         tv_desk.setText(deskripsi);
+        tv_tempat.setText(tempat);
 
         RequestOptions requestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.bg_round).error(R.drawable.bg_round);
 
         Glide.with(this).load(img).apply(requestOptions).into(img_event);
+
+
 
     }
 
@@ -64,6 +88,11 @@ ChallengeAdapter recyclerViewAdapter = findViewById(R.id.recyclerTemp);
     public void simpan() {
         Toast.makeText(this, "Anda Memilih Simpan", Toast.LENGTH_SHORT).show();
     }
+
+    public void beli(View view)
+    {Toast.makeText(this,"Selamat Anda telah membeli Tiket Event", Toast.LENGTH_LONG).show();}
+
+
 
     @Override
     public boolean onSupportNavigateUp() {
@@ -90,4 +119,5 @@ ChallengeAdapter recyclerViewAdapter = findViewById(R.id.recyclerTemp);
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="12dp"
                 android:layout_marginLeft="8dp"
-                android:textColor="#f9ca24"
+                android:textColor="#bde8df"
                 android:lineSpacingExtra="11sp"
                 android:layout_toRightOf="@id/img_event"
                 android:layout_marginTop="4dp"
@@ -61,6 +61,21 @@
                 android:layout_alignParentRight="true"
                 android:text="2019"
                 />
+
+            <TextView
+                android:id="@+id/detail_desk_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_tahun"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/product_sans_reguler"
+                android:lineSpacingExtra="11sp"
+                android:text=""
+                android:textColor="#f9ca24"
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/tv_challenge_judul"
@@ -116,7 +131,7 @@
                 android:layout_marginLeft="11dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/tv_bulan"
-                android:src="@drawable/ic_hari" />
+                android:src="@drawable/ic_lokasi_hitam" />
 
             <TextView
                 android:id="@+id/tv_tempat"
@@ -140,10 +155,10 @@
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:layout_below="@id/tv_challenge_judul"
-                android:layout_marginLeft="36dp"
+                android:layout_marginLeft="38dp"
                 android:layout_marginTop="11dp"
                 android:layout_toRightOf="@id/tv_hari"
-                android:src="@drawable/ic_hari" />
+                android:src="@drawable/ic_waktu_putih" />
 
             <TextView
                 android:id="@+id/tv_waktu"
@@ -211,19 +226,20 @@
 
 
             <Button
-                android:layout_marginTop="16dp"
-                android:layout_width="54dp"
-                android:layout_height="20dp"
-                android:fontFamily="@font/product_sans_reguler"
-                android:textAllCaps="false"
-                android:text="Ikuti"
-                android:id="@+id/cl_selengkapnya"
+                android:id="@+id/btn_ikuti"
+                android:layout_width="87dp"
+                android:layout_height="28dp"
+                android:layout_below="@id/tv_bulan"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="123dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="8dp"
                 android:layout_toRightOf="@id/img_event"
                 android:background="@drawable/bg_round_challenge"
-                android:layout_marginLeft="8dp"
-                android:textSize="10dp"
-                android:layout_below="@id/tv_bulan"
-                />
+                android:fontFamily="@font/product_sans_reguler"
+                android:text="Ikuti"
+                android:textAllCaps="false"
+                android:textSize="12dp" />
 
             <TextView
                 android:layout_width="40dp"

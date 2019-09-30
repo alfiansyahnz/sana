@@ -50,6 +50,8 @@
     <string name="input_error">Wajib diisi</string>
     <string name="input_error_email">Cek email</string>
     <string name="default_web_client_id" translatable="false">556379094282-ddpntb0j08rlvmt1df6jjt500oiultfs.apps.googleusercontent.com</string>
-
+    <string name="transition_image">image</string>
+    <string name="transition_quote">quote</string>
+    <string name="transition_attribution">attribution</string>
 
 </resources>

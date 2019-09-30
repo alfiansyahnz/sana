@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -13,6 +14,7 @@ import com.android.volley.toolbox.Volley;
 import com.sana.R;
 import com.sana.adapter.EventAdapter;
 import com.sana.models.Event;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,6 +40,10 @@ public class EventActivity extends AppCompatActivity {
         mListItem = new ArrayList<>() ;
         recyclerView = findViewById(R.id.recyclerTemp);
         jsonrequest();
+
+        getSupportActionBar().setTitle("Event");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
 
@@ -103,5 +109,21 @@ public class EventActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myadapter2);
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.search_menu, menu);
+
+
+
+        return super.onCreateOptionsMenu(menu);
     }
 }

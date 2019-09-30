@@ -6,23 +6,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-<<<<<<< HEAD
-import com.sana.feature.challenge.ChallengeActivity;
-import com.sana.feature.challenge.DetailChallenge;
-import com.sana.R;
-import com.sana.models.Challenge;
-=======
-import com.sana.feature.challenge.DetailChallenge;
-import com.sana.feature.challenge.ChallengeActivity;
-import com.sana.R;
-import com.sana.models.Challenge;
 
->>>>>>> 11ceeef8410334199efc89ae6f19edcb46d922b1
+import com.sana.R;
+import com.sana.feature.challenge.ChallengeActivity;
+import com.sana.feature.challenge.DetailChallenge;
+import com.sana.models.Challenge;
 
 
 import java.util.List;
@@ -76,6 +70,8 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.MyVi
 
 
         return new MyViewHolder(view);
+
+
     }
 
 
@@ -90,11 +86,11 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.MyVi
         holder.tv_judul.setText(mData.get(position).getJudul());
         holder.tv_deskripsi.setText(mData.get(position).getDeskripsi());
 
-        /*holder.tv_suka.setText(mData.get(position).getSuka());
+        holder.tv_suka.setText(mData.get(position).getSuka());
         holder.tv_bagi.setText(mData.get(position).getBagi());
-        holder.tv_gabung.setText(mData.get(position).getGabung());*/
+        holder.tv_gabung.setText(mData.get(position).getGabung());
 
-        holder.view_container.setOnClickListener(new View.OnClickListener() {
+        holder.btn_selengkapnya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context mContext = v.getContext();
@@ -139,6 +135,7 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.MyVi
         TextView tv_suka;
         TextView tv_bagi;
         ImageView img_thumbnail;
+        Button btn_selengkapnya;
         LinearLayout view_container;
 
 
@@ -151,9 +148,10 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.MyVi
             view_container = itemView.findViewById(R.id.bg_challenge);
             tv_judul = itemView.findViewById(R.id.tv_challenge_judul);
             tv_deskripsi = itemView.findViewById(R.id.tv_challenge_desc);
-   /*       tv_gabung = itemView.findViewById(R.id.tv_gabung);
+            btn_selengkapnya = itemView.findViewById(R.id.btn_selengkapnya);
+          tv_gabung = itemView.findViewById(R.id.tv_gabung);
             tv_suka = itemView.findViewById(R.id.tv_suka);
-            tv_bagi = itemView.findViewById(R.id.tv_bagi);*/
+            tv_bagi = itemView.findViewById(R.id.tv_bagi);
             img_thumbnail = itemView.findViewById(R.id.img_challenge);
             recyclerView = itemView.findViewById(R.id.recyclerTemp);
 

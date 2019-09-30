@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.sana.R;
 import com.sana.adapter.SliderAdapter;
+import com.sana.feature.akun.LoginActivity;
 
 
 public class OnBoardingActivity extends AppCompatActivity {
@@ -36,12 +37,12 @@ public class OnBoardingActivity extends AppCompatActivity {
 
 
 
-        mSlideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
-        mDotLayout = (LinearLayout) findViewById(R.id.dotsLayout);
+        mSlideViewPager = findViewById(R.id.slideViewPager);
+        mDotLayout = findViewById(R.id.dotsLayout);
 
-        mNextButton = (Button) findViewById(R.id.btn_next);
-        mBackButton = (Button) findViewById(R.id.btn_prev);
-        mMulaiButton = (Button) findViewById(R.id.btn_mulai);
+        mNextButton = findViewById(R.id.btn_next);
+        mBackButton = findViewById(R.id.btn_prev);
+        mMulaiButton = findViewById(R.id.btn_mulai);
 
         sliderAdapter = new SliderAdapter(this);
         mSlideViewPager.setAdapter(sliderAdapter);
@@ -52,7 +53,7 @@ public class OnBoardingActivity extends AppCompatActivity {
 
         if (restorePrevData()){
 
-            Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
+            Intent mainActivity = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(mainActivity);
             finish();
         }
@@ -146,7 +147,7 @@ public class OnBoardingActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-                        Intent mainActivity = new Intent(getApplicationContext(),MainActivity.class);
+                        Intent mainActivity = new Intent(getApplicationContext(),LoginActivity.class);
                         startActivity(mainActivity);
 
                         savePrefsData();

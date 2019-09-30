@@ -6,13 +6,13 @@ public class Challenge {
     private String judul;
     private String deskripsi;
     private String img;
-    private int suka;
-    private int bagi;
-    private int gabung;
+    private String suka;
+    private String bagi;
+    private String gabung;
 
     public Challenge(){};
 
-    public Challenge(String id, String judul, String deskripsi, String img, Integer suka, Integer bagi, Integer gabung) {
+    public Challenge(String id, String judul, String deskripsi, String img, String suka, String bagi, String gabung) {
         this.id = id;
         this.judul = judul;
         this.deskripsi = deskripsi;
@@ -54,27 +54,27 @@ public class Challenge {
         this.img = img;
     }
 
-    public Integer getSuka() {
+    public String getSuka() {
         return suka;
     }
 
-    public void setSuka(Integer suka) {
+    public void setSuka(String suka) {
         this.suka = suka;
     }
 
-    public Integer getBagi() {
+    public String getBagi() {
         return bagi;
     }
 
-    public void setBagi(Integer bagi) {
+    public void setBagi(String bagi) {
         this.bagi = bagi;
     }
 
-    public Integer getGabung() {
+    public String getGabung() {
         return gabung;
     }
 
-    public void setGabung(Integer gabung) {
+    public void setGabung(String gabung) {
         this.gabung = gabung;
     }
 }

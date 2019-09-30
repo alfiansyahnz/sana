@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/miCompose"
+        android:icon="@drawable/ic_chat"
+        app:showAsAction="ifRoom"
+        android:title="Chat">
+    </item>
+    <item
+        android:id="@+id/miProfile"
+        android:icon="@drawable/ic_lonceng"
+        app:showAsAction="ifRoom|withText"
+        android:title="Notifikasi">
+    </item>
+</menu>

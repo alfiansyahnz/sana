@@ -112,6 +112,7 @@
                 android:src="@drawable/ic_waktu" />
 
             <TextView
+                android:id="@+id/tv_waktu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/img_waktu"
@@ -148,12 +149,11 @@
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:fontFamily="@font/product_sans_reguler"
                 android:lineSpacingExtra="8sp"
-                android:maxLines="4"
                 android:text="@string/deskripsi"
                 android:textColor="#b4b3b3"
                 android:textSize="14dp" />
 
-            <Button
+            <!--<Button
                 android:id="@+id/btn_baca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -167,12 +167,12 @@
                 android:textAllCaps="false"
                 android:textColor="#0dac8b"
                 android:textSize="14dp" />
-
+-->
             <TextView
                 android:id="@+id/tv_komentar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/btn_baca"
+                android:layout_below="@+id/detail_deskripsi"
                 android:layout_marginLeft="@dimen/activity_vertical_margin"
                 android:layout_marginTop="@dimen/activity_horizontal_margin"
                 android:layout_marginBottom="16dp"
@@ -185,7 +185,7 @@
                 android:id="@+id/btn_lihat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/btn_baca"
+                android:layout_below="@id/detail_deskripsi"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="@dimen/activity_vertical_margin"

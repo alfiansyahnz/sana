@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 
@@ -40,6 +41,10 @@ public class ChallengeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge);
 
+        getSupportActionBar().setTitle("Challenge");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         mListItem = new ArrayList<>() ;
         recyclerView = findViewById(R.id.recyclerTemp);
 
@@ -70,9 +75,9 @@ public class ChallengeActivity extends AppCompatActivity {
                         model.setId(jsonObject.getString("id"));
                         model.setJudul(jsonObject.getString("judul"));
                         model.setDeskripsi(jsonObject.getString("deskripsi"));
-                        model.setSuka(jsonObject.getInt("suka"));
-                        model.setBagi(jsonObject.getInt("bagi"));
-                        model.setGabung(jsonObject.getInt("gabung"));
+                        model.setSuka(jsonObject.getString("suka"));
+                        model.setBagi(jsonObject.getString("bagi"));
+                        model.setGabung(jsonObject.getString("gabung"));
                         model.setImg(jsonObject.getString("img"));
                         mListItem.add(model);
 
@@ -119,5 +124,21 @@ public class ChallengeActivity extends AppCompatActivity {
         recyclerView.scheduleLayoutAnimation();
 
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.search_menu, menu);
+
+
+
+        return super.onCreateOptionsMenu(menu);
     }
 }

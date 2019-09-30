@@ -21,7 +21,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="135dp"
             android:background="@drawable/back_challenge"
 
             >
@@ -32,11 +32,24 @@
                 android:scaleType="centerCrop"
                 android:id="@+id/img_challenge"
                 android:src="@drawable/hiu"
-                android:transitionName="Image"
+                android:transitionName="@string/transition_image"
                 />
 
             <TextView
                 android:id="@+id/tv_gabung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:layout_toLeftOf="@id/tv_gabung_tulis"
+                android:layout_marginRight="4dp"
+                android:textColor="#f9ca24"
+                android:lineSpacingExtra="11sp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/product_sans_reguler"
+                android:text="300"
+                />
+            <TextView
+                android:id="@+id/tv_gabung_tulis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="10dp"
@@ -46,7 +59,7 @@
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/product_sans_reguler"
                 android:layout_alignParentRight="true"
-                android:text="300 orang bergabung"
+                android:text="orang bergabung"
                 />
 
             <TextView
@@ -94,7 +107,7 @@
                 android:src="@drawable/ic_suka"
                 android:layout_toRightOf="@id/img_challenge"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:layout_below="@id/tv_challenge_desc"
                 />
 
@@ -104,7 +117,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_challenge_desc"
                 android:layout_marginLeft="4dp"
-                android:layout_marginTop="9dp"
+                android:layout_marginTop="14dp"
                 android:layout_toRightOf="@id/img_like"
                 android:fontFamily="@font/product_sans_bold"
                 android:text="21"
@@ -118,7 +131,7 @@
                 android:src="@drawable/ic_bagi"
                 android:layout_toRightOf="@id/tv_suka"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:layout_below="@id/tv_challenge_desc"
                 />
 
@@ -128,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_challenge_desc"
                 android:layout_marginLeft="4dp"
-                android:layout_marginTop="9dp"
+                android:layout_marginTop="14dp"
                 android:layout_toRightOf="@id/img_bagi"
                 android:fontFamily="@font/product_sans_bold"
                 android:text="10"
@@ -137,19 +150,18 @@
 
 
             <Button
-                android:layout_marginTop="8dp"
-                android:layout_width="100dp"
-                android:layout_height="20dp"
-                android:fontFamily="@font/product_sans_reguler"
-                android:textAllCaps="false"
-                android:text="Selengkapnya"
-                android:id="@+id/cl_selengkapnya"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/bg_round_challenge"
-                android:layout_marginRight="8dp"
-                android:textSize="10dp"
+                android:id="@+id/btn_selengkapnya"
+                android:layout_width="106dp"
+                android:layout_height="28dp"
                 android:layout_below="@id/tv_challenge_desc"
-                />
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/bg_round_challenge"
+                android:fontFamily="@font/product_sans_reguler"
+                android:text="Selengkapnya"
+                android:textAllCaps="false"
+                android:textSize="12dp" />
 
         </RelativeLayout>
 

@@ -1,0 +1,13 @@
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/shadow"/>
+    <item
+        android:drawable="@drawable/rectangle"
+        android:bottom="10px" />
+    <corners android:bottomRightRadius="3dp"
+        android:bottomLeftRadius="3dp"
+        android:topRightRadius="3dp"
+        android:topLeftRadius="3dp"/>
+
+</layer-list>

@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/berbagi"
-        android:icon="@drawable/icon_bagi"
+        android:icon="@drawable/ic_bagi_putih"
         android:title="Bagi"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/simpan"
-        android:icon="@drawable/icon_like"
+        android:icon="@drawable/ic_suka_putih"
         android:title="Simpan"
         app:showAsAction="ifRoom" />
 

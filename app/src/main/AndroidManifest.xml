@@ -13,28 +13,48 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity android:name=".OnBoardingActivity">
-        </activity>
-        <activity android:name=".SplashActivity"/>
-        <activity android:name=".feature.event.EventActivity"/>
-        <activity android:name=".feature.event.DetailEvent" />
-        <activity android:name=".feature.challenge.DetailChallenge" />
-        <activity android:name=".feature.challenge.ChallengeActivity"/>
-        <activity android:name=".feature.donasi.DonasiProsesActivity" />
-        <activity android:name=".feature.donasi.FormVolunteerActivity" />
-        <activity android:name=".feature.akun.LoginActivity" />
-        <activity android:name=".feature.akun.ProfilActivity"/>
-        <activity android:name=".feature.akun.RegisterActivity" />
-        <activity android:name=".feature.akun.RepasswordActivity"/>
-        <activity android:name=".feature.donasi.DonasiActivity" />
-        <activity android:name=".feature.komunitas.Komunitas"/>
-        <activity android:name=".feature.chat.ChatActivity"/>
-        <activity android:name=".SignInActivity"/>
-        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".SplashActivity" />
+        <activity android:name=".feature.event.EventActivity" />
+        <activity android:name=".feature.event.DetailEvent" />
+        <activity android:name=".feature.challenge.DetailChallenge" />
+        <activity android:name=".feature.challenge.ChallengeActivity" />
+        <activity android:name=".feature.donasi.DonasiProsesActivity" />
+        <activity android:name=".feature.donasi.FormVolunteerActivity" />
+        <activity android:name=".feature.berita.Berita" />
+        <activity android:name=".feature.berita.DetailArticle" />
+        <activity android:name=".feature.berita.ListNews" />
+        <activity android:name=".feature.akun.RepasswordActivity" />
+        <activity android:name=".feature.donasi.DonasiActivity" />
+        <activity android:name=".feature.komunitas.Komunitas" />
+        <activity android:name=".feature.chat.ChatActivity" />
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".feature.akun.SandiActivity"/>
+        <activity
+            android:name=".feature.lapor.LaporActivity"
+            android:theme="@style/AppThemeLogin"/>
+        <activity
+            android:name=".feature.akun.ProfilActivity"
+            android:theme="@style/AppThemeRegist" />
+        <activity
+            android:name=".feature.akun.RegisterActivity"
+            android:theme="@style/AppThemeRegist"/>
+        <activity
+            android:name=".feature.akun.LoginActivity"
+            android:theme="@style/AppThemeLogin"/>
+
+        <activity android:name=".MainActivity">
+
+        </activity>
+
+        <activity android:name=".feature.donasi.DetailDonasiActivity">
+
         </activity>
 
         <service
@@ -44,8 +64,6 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <activity android:name=".feature.donasi.DetailDonasiActivity">
-        </activity>
     </application>
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

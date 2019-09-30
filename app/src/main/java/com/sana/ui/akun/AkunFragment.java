@@ -15,20 +15,13 @@ import com.sana.R;
 
 public class AkunFragment extends Fragment {
 
-    private AkunViewModel mAkunViewModel;
+    public AkunFragment() {
+        // Required empty public constructor
+    }
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        mAkunViewModel =
-                ViewModelProviders.of(this).get(AkunViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_beranda, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
-        mAkunViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        View root = inflater.inflate(R.layout.fragment_akun, container, false);
+
         return root;
     }
 }

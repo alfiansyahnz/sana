@@ -15,20 +15,12 @@ import com.sana.R;
 
 public class KomunitasFragment extends Fragment {
 
-    private KomunitasViewModel mKomunitasViewModel;
+    public KomunitasFragment() {
+        // Required empty public constructor
+    }
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        mKomunitasViewModel =
-                ViewModelProviders.of(this).get(KomunitasViewModel.class);
         View root = inflater.inflate(R.layout.fragment_komunitas, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        mKomunitasViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 }

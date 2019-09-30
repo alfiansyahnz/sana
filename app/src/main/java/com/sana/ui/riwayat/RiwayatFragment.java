@@ -15,20 +15,13 @@ import com.sana.R;
 
 public class RiwayatFragment extends Fragment {
 
-    private RiwayatViewModel mRiwayatViewModel;
+    public RiwayatFragment() {
+        // Required empty public constructor
+    }
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        mRiwayatViewModel =
-                ViewModelProviders.of(this).get(RiwayatViewModel.class);
         View root = inflater.inflate(R.layout.fragment_riwayat, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
-        mRiwayatViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }

@@ -6,16 +6,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+
+import com.sana.R;
 import com.sana.feature.event.DetailEvent;
 import com.sana.feature.event.EventActivity;
-import com.sana.R;
 import com.sana.models.Event;
+
 
 import java.util.List;
 
@@ -76,11 +79,12 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
         holder.tv_tahun.setText(mEvent.get(position).getTahun());
         holder.tv_waktu.setText(mEvent.get(position).getWaktu());
         holder.tv_group.setText(mEvent.get(position).getGroup());
+        /*holder.tv_desk.setText(mEvent.get(position).getDeskripsi());*/
         /*holder.tv_suka.setText(mData.get(position).getSuka());
         holder.tv_bagi.setText(mData.get(position).getBagi());
         holder.tv_gabung.setText(mData.get(position).getGabung());*/
 
-        holder.view_container.setOnClickListener(new View.OnClickListener() {
+        holder.btn_ikuti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context mContext = v.getContext();
@@ -94,6 +98,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
                 i.putExtra("tahun", model_event.getTahun());
                 i.putExtra("img_event",model_event.getImg());
                 i.putExtra("group",model_event.getGroup());
+                i.putExtra("deskripsi",model_event.getDeskripsi());
                 /*i.putExtra("deskripsi",model_event.getDeskripsi());*/
                /* i.putExtra("anime_studio",mData.get(viewHolder.getAdapterPosition()).getStudio());
                 i.putExtra("anime_category",mData.get(viewHolder.getAdapterPosition()).getCategorie());
@@ -132,6 +137,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
         TextView tv_tahun;
         TextView tv_group;
         TextView tv_desk;
+        Button btn_ikuti;
         ImageView img_event;
         LinearLayout view_container;
 
@@ -149,6 +155,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
             tv_bulan = itemView.findViewById(R.id.tv_bulan);
             tv_group = itemView.findViewById(R.id.tv_group);
             tv_desk = itemView.findViewById(R.id.detail_deskripsi);
+            btn_ikuti = itemView.findViewById(R.id.btn_ikuti);
+
 
    /*       tv_gabung = itemView.findViewById(R.id.tv_gabung);
             tv_suka = itemView.findViewById(R.id.tv_suka);
@@ -157,6 +165,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
             recyclerView = itemView.findViewById(R.id.recyclerTemp);
 
         }
+
+
     }
 
 }

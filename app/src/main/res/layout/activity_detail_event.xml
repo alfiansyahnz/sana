@@ -64,10 +64,10 @@
                 android:layout_height="24dp"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/ic_point" />
+                android:src="@drawable/ic_lokasi_hitam" />
 
             <TextView
-                android:id="@+id/point"
+                android:id="@+id/tv_tempat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/img_point"
@@ -76,7 +76,7 @@
                 android:layout_marginBottom="4dp"
                 android:layout_toRightOf="@id/img_point"
                 android:text="50 point"
-                android:fontFamily="@font/product_sans_bold"
+                android:fontFamily="@font/product_sans_reguler"
                 android:textSize="12sp" />
 
             <ImageView
@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="16dp"
-                android:layout_toRightOf="@id/point"
+                android:layout_toRightOf="@id/tv_tempat"
                 android:src="@drawable/ic_gabung" />
 
             <TextView
@@ -97,7 +97,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="4dp"
                 android:layout_toRightOf="@id/img_gabung"
-                android:fontFamily="@font/product_sans_bold"
+                android:fontFamily="@font/product_sans_reguler"
                 android:text="234"
                 android:textSize="12sp" />
 
@@ -118,7 +118,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="4dp"
                 android:layout_toRightOf="@id/img_waktu"
-                android:fontFamily="@font/product_sans_bold"
+                android:fontFamily="@font/product_sans_reguler"
                 android:text="5 hari"
                 android:textSize="12sp" />
 
@@ -128,7 +128,7 @@
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="8dp"
                 android:layout_below="@id/img_point"
-                android:src="@drawable/ic_point"
+                android:src="@drawable/ic_kalendar"
                 android:id="@+id/img_kalender"
                 />
 
@@ -144,7 +144,7 @@
                 android:layout_marginBottom="-27dp"
                 android:layout_toRightOf="@id/img_kalender"
                 android:fontFamily="@font/product_sans_bold"
-                android:text="Senin"
+                android:text="hari"
                 android:textSize="12sp" />
 
             <TextView
@@ -156,8 +156,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="-27dp"
                 android:layout_toRightOf="@id/tv_hari"
-                android:fontFamily="@font/product_sans_bold"
-                android:text="22"
+                android:fontFamily="@font/product_sans_reguler"
+                android:text="tanggal"
                 android:textSize="12sp" />
 
             <TextView
@@ -169,8 +169,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="-27dp"
                 android:layout_toRightOf="@id/tv_tanggal"
-                android:fontFamily="@font/product_sans_bold"
-                android:text="Agustus"
+                android:fontFamily="@font/product_sans_reguler"
+                android:text="bulan"
                 android:textSize="12sp" />
 
             <TextView
@@ -182,8 +182,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="-27dp"
                 android:layout_toRightOf="@id/tv_bulan"
-                android:fontFamily="@font/product_sans_bold"
-                android:text="2019"
+                android:fontFamily="@font/product_sans_reguler"
+                android:text="tahun"
                 android:textSize="12sp" />
             <TextView
                 android:id="@+id/tv_pukul"
@@ -194,7 +194,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="-27dp"
                 android:layout_toRightOf="@id/tv_tahun"
-                android:fontFamily="@font/product_sans_bold"
+                android:fontFamily="@font/product_sans_reguler"
                 android:text="pukul"
                 android:textSize="12sp" />
 
@@ -207,8 +207,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="-27dp"
                 android:layout_toRightOf="@id/tv_pukul"
-                android:fontFamily="@font/product_sans_bold"
-                android:text="07.00"
+                android:fontFamily="@font/product_sans_reguler"
+                android:text="waktu"
                 android:textSize="12sp" />
 
             <TextView
@@ -264,12 +264,11 @@
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:fontFamily="@font/product_sans_reguler"
                 android:lineSpacingExtra="8sp"
-                android:maxLines="4"
                 android:text="@string/deskripsi"
                 android:textColor="#b4b3b3"
                 android:textSize="14dp" />
 
-            <Button
+            <!--<Button
                 android:id="@+id/btn_baca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -279,16 +278,16 @@
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:background="@null"
                 android:fontFamily="@font/product_sans_bold"
-                android:text="Baca Selengkapnya"
+                android:text=""
                 android:textAllCaps="false"
                 android:textColor="#0dac8b"
-                android:textSize="14dp" />
+                android:textSize="5dp" />-->
 
             <TextView
                 android:id="@+id/tv_komentar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/btn_baca"
+                android:layout_below="@+id/detail_deskripsi_event"
                 android:layout_marginLeft="@dimen/activity_vertical_margin"
                 android:layout_marginTop="@dimen/activity_horizontal_margin"
                 android:layout_marginBottom="16dp"
@@ -301,7 +300,7 @@
                 android:id="@+id/btn_lihat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/btn_baca"
+                android:layout_below="@id/detail_deskripsi_event"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
@@ -434,7 +433,7 @@
 
         </RelativeLayout>
 
-    <TextView
+    <Button
         android:text="BELI TIKET"
 
         android:id="@+id/btn_beli"
@@ -446,9 +445,11 @@
         android:layout_marginBottom="24dp"
         android:textColor="#fff"
         android:background="@drawable/bg_round_challenge"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:onClick="beli"
+        >
 
-    </TextView>
+    </Button>
 
 
     <!-- <TableLayout
