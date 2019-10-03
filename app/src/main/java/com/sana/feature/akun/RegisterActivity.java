@@ -35,7 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
     private ProgressBar loading;
     private TextView link_login, teks;
     ImageView eye1, eye2;
-    private static String URL_REGIST = "https://serversana.000webhostapp.com/register.php";
+    private static String URL_REGIST = "https://lanuginose-numbers.000webhostapp.com/user/register.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

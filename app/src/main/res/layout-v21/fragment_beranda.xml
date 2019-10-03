@@ -86,6 +86,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
+                    android:id="@+id/ib_donasi"
                     android:layout_margin="11dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -93,6 +94,7 @@
                     />
 
                 <ImageButton
+                    android:id="@+id/ib_challenge"
                     android:layout_margin="11dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -101,6 +103,7 @@
 
 
                 <ImageButton
+                    android:id="@+id/ib_event"
                     android:layout_margin="11dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -109,6 +112,7 @@
 
 
                 <ImageButton
+                    android:id="@+id/ib_lapor"
                     android:layout_margin="11dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -117,6 +121,7 @@
 
 
                 <ImageButton
+                    android:id="@+id/ib_berita"
                     android:layout_margin="11dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"

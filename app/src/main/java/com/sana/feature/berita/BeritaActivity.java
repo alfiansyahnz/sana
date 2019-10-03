@@ -22,7 +22,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Berita extends AppCompatActivity {
+public class BeritaActivity extends AppCompatActivity {
 
     RecyclerView listWebsite;
     RecyclerView.LayoutManager layoutManager;

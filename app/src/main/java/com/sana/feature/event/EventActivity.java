@@ -41,7 +41,7 @@ public class EventActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerTemp);
         jsonrequest();
 
-        getSupportActionBar().setTitle("Event");
+//        getSupportActionBar().setTitle("Event");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 

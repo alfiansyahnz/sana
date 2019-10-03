@@ -36,21 +36,21 @@ public class LaporActivity extends AppCompatActivity {
     private Button btn_lapor, btn_bukti;
     private EditText nm_lapor, email_lapor, alamat_lapor, tlp_lapor, isi_lapor;
     private ProgressBar loading;
-    private static String URL_LAPOR = "https://serversana.000webhostapp.com/lapor.php";
+    private static String URL_LAPOR = "https://lanuginose-numbers.000webhostapp.com/user/lapor.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lapor);
-        tgl_pengaduan = (TextView) findViewById(R.id.tgl_pengaduan);
-        tgl_lahir = (TextView) findViewById(R.id.tgl_lahir);
-        btn_lapor = (Button) findViewById(R.id.btn_lapor);
-        btn_bukti = (Button) findViewById(R.id.btn_bukti);
-        nm_lapor = (EditText) findViewById(R.id.nm_lapor);
-        email_lapor = (EditText) findViewById(R.id.email_lapor);
-        alamat_lapor = (EditText) findViewById(R.id.alamat_lapor);
-        tlp_lapor = (EditText) findViewById(R.id.tlp_lapor);
-        isi_lapor = (EditText) findViewById(R.id.isi_lapor);
+        tgl_pengaduan = findViewById(R.id.tgl_pengaduan);
+        tgl_lahir = findViewById(R.id.tgl_lahir);
+        btn_lapor = findViewById(R.id.btn_lapor);
+        btn_bukti = findViewById(R.id.btn_bukti);
+        nm_lapor = findViewById(R.id.nm_lapor);
+        email_lapor = findViewById(R.id.email_lapor);
+        alamat_lapor = findViewById(R.id.alamat_lapor);
+        tlp_lapor = findViewById(R.id.tlp_lapor);
+        isi_lapor = findViewById(R.id.isi_lapor);
         loading = findViewById(R.id.loading);
 
         tgl_pengaduan.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +67,7 @@ public class LaporActivity extends AppCompatActivity {
             }
         });
 
-        btn_bukti.setOnClickListener(new View.OnClickListener(){
+        btn_bukti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chooseFile();
@@ -85,7 +85,7 @@ public class LaporActivity extends AppCompatActivity {
         });
     }
 
-    private void Lapor(){
+    private void Lapor() {
         loading.setVisibility(View.VISIBLE);
         btn_lapor.setVisibility(View.GONE);
 
@@ -94,8 +94,8 @@ public class LaporActivity extends AppCompatActivity {
         final String alamat_lapor = this.alamat_lapor.getText().toString().trim();
         final String tlp_lapor = this.tlp_lapor.getText().toString().trim();
         final String isi_lapor = this.isi_lapor.getText().toString().trim();
-        final String tgl_pengaduan = this.tgl_pengaduan.getText().toString().trim();
-        final String tgl_lahir = this.tgl_lahir.getText().toString().trim();
+        final String tgl_pengaduan = LaporActivity.tgl_pengaduan.getText().toString().trim();
+        final String tgl_lahir = LaporActivity.tgl_lahir.getText().toString().trim();
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LAPOR,
@@ -182,8 +182,8 @@ public class LaporActivity extends AppCompatActivity {
         @Override
         public void onDateSet(DatePicker view, int year, int month, int day) {
             // store the data in one string and set it to text
-            String date1 = String.valueOf(month) + "/" + String.valueOf(day)
-                    + "/" + String.valueOf(year);
+            String date1 = month + "/" + day
+                    + "/" + year;
             tgl_pengaduan.setText(date1);
         }
     };
@@ -194,14 +194,14 @@ public class LaporActivity extends AppCompatActivity {
         @Override
         public void onDateSet(DatePicker view, int year, int month, int day) {
             // store the data in one string and set it to text
-            String date2 = String.valueOf(month) + "/" + String.valueOf(day)
-                    + "/" + String.valueOf(year);
+            String date2 = month + "/" + day
+                    + "/" + year;
             tgl_lahir.setText(date2);
         }
     };
 
     //File Bukti
-    private void chooseFile(){
+    private void chooseFile() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);

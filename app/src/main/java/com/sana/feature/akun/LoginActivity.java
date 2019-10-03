@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView link_regist, teks2;
     private ProgressBar loading;
     private ImageView eye1, eye2;
-    private static String URL_LOGIN = "https://serversana.000webhostapp.com/login.php";
+    private static String URL_LOGIN = " https://lanuginose-numbers.000webhostapp.com/user/login.php";
     SessionManager sessionManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

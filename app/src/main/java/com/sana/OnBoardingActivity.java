@@ -36,7 +36,6 @@ public class OnBoardingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_onboarding);
 
 
-
         mSlideViewPager = findViewById(R.id.slideViewPager);
         mDotLayout = findViewById(R.id.dotsLayout);
 

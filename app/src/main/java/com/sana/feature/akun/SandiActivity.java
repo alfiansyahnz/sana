@@ -24,7 +24,7 @@ public class SandiActivity extends AppCompatActivity {
     Button btn_send, btn_back;
     EditText email;
     String sEmail;
-    String URL_FORGOT = "https://serversana.000webhostapp.com/forgot.php";
+    String URL_FORGOT = "https://lanuginose-numbers.000webhostapp.com/user/forgot.php";
     StringRequest stringRequest;
     private ProgressBar loading;
 
