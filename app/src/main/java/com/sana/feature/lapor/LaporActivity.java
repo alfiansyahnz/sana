@@ -1,5 +1,6 @@
 package com.sana.feature.lapor;
 
+
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
@@ -53,6 +54,10 @@ public class LaporActivity extends AppCompatActivity {
         isi_lapor = findViewById(R.id.isi_lapor);
         loading = findViewById(R.id.loading);
 
+        getSupportActionBar().setTitle("Lapor Lingkungan");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         tgl_pengaduan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
@@ -67,7 +72,7 @@ public class LaporActivity extends AppCompatActivity {
             }
         });
 
-        btn_bukti.setOnClickListener(new View.OnClickListener() {
+        btn_bukti.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 chooseFile();
@@ -77,25 +82,32 @@ public class LaporActivity extends AppCompatActivity {
         btn_lapor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String mNama = nm_lapor.getText().toString().trim();
+                String mEmail = email_lapor.getText().toString().trim();
+                String mAlamat = alamat_lapor.getText().toString().trim();
+                String mTelepon = tlp_lapor.getText().toString().trim();
+                String mIsi = isi_lapor.getText().toString().trim();
+                String mTglAdu = tgl_pengaduan.getText().toString().trim();
+                String mTglLahir = tgl_lahir.getText().toString().trim();
 
-                Lapor();
-                //Intent i = new Intent(LaporActivity.this, ProfilActivity.class);
-                //startActivity(i);
+                if (!mNama.isEmpty() && !mEmail.isEmpty() && !mAlamat.isEmpty() && !mTelepon.isEmpty() && !mIsi.isEmpty() && !mTglAdu.isEmpty() && !mTglLahir.isEmpty()) {
+                    Lapor(mNama, mEmail, mAlamat, mTelepon, mIsi, mTglAdu, mTglLahir);
+                } else {
+                    nm_lapor.setError("Masukkan nama");
+                    email_lapor.setError("Masukkan email");
+                    alamat_lapor.setError("Masukkan alamat");
+                    tlp_lapor.setError("Masukkan telepon");
+                    isi_lapor.setError("Masukkan isi pengaduan");
+                    tgl_pengaduan.setError("Masukkan tanggal");
+                    tgl_lahir.setError("Masukkan tanggal");
+                }
             }
         });
     }
 
-    private void Lapor() {
+    private void Lapor(final String nm_lapor, final String email_lapor, final String alamat_lapor, final String tlp_lapor, final String isi_lapor, final String tgl_pengaduan, final String tgl_lahir){
         loading.setVisibility(View.VISIBLE);
         btn_lapor.setVisibility(View.GONE);
-
-        final String nm_lapor = this.nm_lapor.getText().toString().trim();
-        final String email_lapor = this.email_lapor.getText().toString().trim();
-        final String alamat_lapor = this.alamat_lapor.getText().toString().trim();
-        final String tlp_lapor = this.tlp_lapor.getText().toString().trim();
-        final String isi_lapor = this.isi_lapor.getText().toString().trim();
-        final String tgl_pengaduan = LaporActivity.tgl_pengaduan.getText().toString().trim();
-        final String tgl_lahir = LaporActivity.tgl_lahir.getText().toString().trim();
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LAPOR,
@@ -201,10 +213,16 @@ public class LaporActivity extends AppCompatActivity {
     };
 
     //File Bukti
-    private void chooseFile() {
+    private void chooseFile(){
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Pilih Gambar"), 1);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

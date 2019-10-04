@@ -9,7 +9,7 @@
 
     <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/formulir"
@@ -42,11 +42,10 @@
             android:textSize="15sp"/>
 
         <TableRow
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_marginTop="11dp"
-            android:paddingRight="15dp"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginRight="24dp"
             >
 
             <TextView
@@ -60,23 +59,21 @@
 
             <EditText
                 android:id="@+id/nm_lapor"
-                android:layout_width="218dp"
+                android:layout_width="100dp"
                 android:layout_height="23dp"
-                android:paddingLeft="8dp"
                 android:layout_gravity="center_vertical"
-                android:maxLines="1"
-                android:textSize="12sp"
-                android:textColor="@color/colorBlueGreen"
                 android:background="@drawable/rectangle_shadow"
-                />
+                android:maxLines="1"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textColor="@color/colorBlueGreen"
+                android:textSize="12sp" />
         </TableRow>
 
         <TableRow android:baselineAligned="true"
             android:layout_width="match_parent"
             android:layout_marginTop="11dp"
-            android:paddingRight="15dp"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="40dp"
             >
             <TextView
                 android:layout_width="match_parent"
@@ -101,9 +98,7 @@
         <TableRow android:baselineAligned="true"
             android:layout_width="match_parent"
             android:layout_marginTop="11dp"
-            android:paddingRight="15dp"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="40dp"
             >
 
             <TextView
@@ -132,7 +127,7 @@
             android:layout_width="match_parent"
             android:layout_marginTop="11dp"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="40dp">
+            >
 
             <TextView
                 android:layout_width="match_parent"
@@ -159,7 +154,7 @@
             android:layout_width="match_parent"
             android:layout_marginTop="11dp"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="40dp">
+            >
 
             <TextView
                 android:layout_width="match_parent"
@@ -194,9 +189,7 @@
         <TableRow android:baselineAligned="true"
             android:layout_width="match_parent"
             android:layout_marginTop="11dp"
-            android:paddingRight="15dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="40dp">
+            android:layout_marginStart="15dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -221,9 +214,7 @@
         <TableRow android:baselineAligned="true"
             android:layout_width="match_parent"
             android:layout_marginTop="11dp"
-            android:paddingRight="15dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="40dp">
+            android:layout_marginStart="15dp">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -234,7 +225,7 @@
 
             <EditText
                 android:id="@+id/isi_lapor"
-                android:layout_width="218dp"
+                android:layout_width="wrap_content"
                 android:layout_height="209dp"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
@@ -242,14 +233,12 @@
                 android:gravity="left"
                 android:textColor="@color/colorBlueGreen"
                 android:background="@drawable/rectangle_shadow"
-
                 />
         </TableRow>
 
-        <TableRow android:baselineAligned="true"
-            android:layout_width="match_parent"
+        <TableRow
+            android:layout_width="150dp"
             android:layout_marginTop="11dp"
-            android:paddingRight="15dp"
             android:layout_marginStart="15dp">
 
             <TextView
@@ -261,7 +250,7 @@
                 android:layout_marginRight="10dp"/>
 
             <TextView
-                android:layout_width="218dp"
+                android:layout_width="1dp"
                 android:layout_height="23dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/rectangle_shadow"
@@ -269,30 +258,31 @@
                 android:paddingRight="8dp"
                 android:textColor="@color/colorBlueGreen"
                 android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/btn_bukti"
-                android:layout_width="48dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginEnd="15dp"
-                android:text="Pilih File"
-                android:textSize="8sp"
-                android:textColor="@color/colorWhite"
-                android:background="@drawable/file_button"
-                android:textAllCaps="false"
-                />
         </TableRow>
+
+        <Button
+            android:id="@+id/btn_bukti"
+            android:layout_width="10dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginEnd="160dp"
+            android:layout_marginTop="8dp"
+            android:text="Pilih File"
+            android:textSize="8sp"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/file_button"
+            android:textAllCaps="false"
+            />
+
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="26dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="35dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:textSize="12sp"
-            android:text="Dengan ini saya menyatakan bahwa pengaduan ini adalah
-                kejadian yang sebenarnya terjadi. Saya akan mematuhi peraturan yang berlaku."
+            android:text="Dengan ini saya menyatakan bahwa pengaduan ini adalah kejadian yang sebenarnya terjadi. Saya akan mematuhi peraturan yang berlaku."
             android:textColor="@color/colorBlack"
             android:layout_gravity="start"/>
 
@@ -301,21 +291,32 @@
             android:layout_marginTop="11dp"
             >
 
-            <ProgressBar
-                android:id="@+id/loading"
-                android:layout_marginTop="30dp"
-                android:visibility="gone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
-            <Button
-                android:id="@+id/btn_lapor"
-                android:layout_width="50dp"
-                android:layout_height="42dp"
-                android:background="@drawable/roundbutton"
-                android:text="KIRIM"
-                android:textColor="@color/colorWhite"/>
+
         </TableRow>
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_marginTop="30dp"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <Button
+            android:id="@+id/btn_lapor"
+            android:layout_width="168dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/roundbutton"
+            android:gravity="center"
+            android:text="KIRIM"
+            android:textColor="@color/colorWhite"
+            android:layout_marginBottom="24dp"
+            />
     </TableLayout>
 
 </ScrollView>

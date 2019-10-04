@@ -279,9 +279,6 @@
                 android:layout_toRightOf="@id/img_profil_komentar"
                 android:background="@drawable/bg_tulis_komentar">
 
-
-
-
                 <EditText
                     android:id="@+id/edt_tulis_komentar"
                     android:layout_width="184dp"

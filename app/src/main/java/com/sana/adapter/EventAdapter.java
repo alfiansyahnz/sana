@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,18 +22,21 @@ import com.sana.feature.event.EventActivity;
 import com.sana.models.Event;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder> {
+public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder > implements Filterable {
 
     /*private Context mContext ;*/
     private List<Event> mEvent ;
+    private List<Event> exampleListFull;
     private RequestOptions option;
 
 
     public EventAdapter(EventActivity eventActivity, List<Event> mEvent) {
         /*this.mContext = mContext;*/
         this.mEvent = mEvent;
+        exampleListFull = new ArrayList<>(mEvent);
 
         // Request option for Glide
         option = new RequestOptions().centerCrop().placeholder(R.drawable.bg_round_challenge).error(R.drawable.bg_round_challenge);
@@ -62,7 +67,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
 
 
     @Override
-    public void onBindViewHolder (final MyViewHolder holder, int position){
+    public void onBindViewHolder (final EventAdapter.MyViewHolder holder, int position){
 
         final Event model_event = mEvent.get(position);
 
@@ -124,6 +129,44 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
     public int getItemCount() {
         return mEvent.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return exampleFilter;
+    }
+
+    private Filter exampleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<Event> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0){
+                filteredList.addAll(exampleListFull);
+            }else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (Event item : exampleListFull){
+                    if (item.getJudul().toLowerCase().contains(filterPattern)){
+                        filteredList.add(item);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+
+            mEvent.clear();
+            mEvent.addAll((List) results.values);
+            notifyDataSetChanged();
+
+        }
+    };
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 

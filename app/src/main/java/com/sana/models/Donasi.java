@@ -10,6 +10,15 @@ public class Donasi {
     private String join;
     private int lokasi;
     private int jumlah;
+    private int gambar;
+
+    public int getGambar() {
+        return gambar;
+    }
+
+    public void setGambar(int gambar) {
+        this.gambar = gambar;
+    }
 
     public String getJudul() {
         return judul;

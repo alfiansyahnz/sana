@@ -4,7 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.inputmethod.EditorInfo;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -13,8 +16,8 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.sana.R;
 import com.sana.adapter.EventAdapter;
-import com.sana.models.Event;
 
+import com.sana.models.Event;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,19 +32,19 @@ public class EventActivity extends AppCompatActivity {
     private final String JSON_URL = "https://lanuginose-numbers.000webhostapp.com/event/index.php";
     private JsonArrayRequest request ;
     private RequestQueue requestQueue ;
-    private List<Event> mListItem ;
+    private List<Event> mEvent = new ArrayList<>()  ;
     private RecyclerView recyclerView ;
+    private EventAdapter myadapter2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
 
-        mListItem = new ArrayList<>() ;
         recyclerView = findViewById(R.id.recyclerTemp);
         jsonrequest();
 
-//        getSupportActionBar().setTitle("Event");
+        getSupportActionBar().setTitle("Event");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -76,7 +79,7 @@ public class EventActivity extends AppCompatActivity {
                         model.setTahun(jsonObject.getString("tahun"));
                         model.setGroup(jsonObject.getString("group"));
                         model.setDeskripsi(jsonObject.getString("deskripsi"));
-                        mListItem.add(model);
+                        mEvent.add(model);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -85,7 +88,7 @@ public class EventActivity extends AppCompatActivity {
 
                 }
 
-                setuprecyclerview(mListItem);
+                setuprecyclerview(mEvent);
 
             }
         }, new Response.ErrorListener() {
@@ -105,7 +108,7 @@ public class EventActivity extends AppCompatActivity {
     private void setuprecyclerview(List<Event> mListItem) {
 
 
-        EventAdapter myadapter2 = new EventAdapter(this,mListItem) ;
+        myadapter2 = new EventAdapter(this,mListItem) ;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myadapter2);
 
@@ -121,9 +124,22 @@ public class EventActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.search_menu, menu);
+        MenuItem menuItem = menu.findItem(R.id.menu_search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
 
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
 
-
-        return super.onCreateOptionsMenu(menu);
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                myadapter2.getFilter().filter(newText);
+                return false;
+            }
+        });
+        return true;
     }
 }

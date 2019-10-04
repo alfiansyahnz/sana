@@ -7,7 +7,7 @@
         android:id="@+id/menu_search"
         android:title="Search"
         android:icon="@drawable/ic_search_putih_24dp"
-        app:showAsAction="always|collapseActionView"
-        app:actionViewClass="android.widget.SearchView"/>
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView"/>
 
 </menu>

@@ -19,7 +19,6 @@ import com.sana.feature.berita.BeritaActivity;
 import com.sana.feature.challenge.ChallengeActivity;
 import com.sana.feature.donasi.DonasiActivity;
 import com.sana.feature.event.EventActivity;
-import com.sana.feature.komunitas.Komunitas;
 import com.sana.feature.lapor.LaporActivity;
 import com.sana.ui.riwayat.RiwayatFragment;
 
@@ -30,7 +29,7 @@ public class BerandaFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_beranda, container, false);
 
-        ImageButton ib_donasi = view.findViewById(R.id.ib_donasi);
+        ImageButton ib_donasi = view.findViewById(R.id.img_donasi);
         ib_donasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,15 +37,15 @@ public class BerandaFragment extends Fragment {
                 startActivity(intentLoadNewActivity);
             }
         });
-        ImageButton ib_challenge = view.findViewById(R.id.ib_challenge);
+        ImageButton ib_challenge = view.findViewById(R.id.img_challenge);
         ib_challenge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentLoadNewActivity = new Intent(getActivity(), ChallengeActivity.class);
+                Intent intentLoadNewActivity = new Intent(getActivity().getApplicationContext(), ChallengeActivity.class);
                 startActivity(intentLoadNewActivity);
             }
         });
-        ImageButton ib_event = view.findViewById(R.id.ib_event);
+        ImageButton ib_event = view.findViewById(R.id.img_event);
         ib_event.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,15 +53,15 @@ public class BerandaFragment extends Fragment {
                 startActivity(intentLoadNewActivity);
             }
         });
-        ImageButton ib_lapor = view.findViewById(R.id.ib_lapor);
+        ImageButton ib_lapor = view.findViewById(R.id.img_lapor);
         ib_lapor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentLoadNewActivity = new Intent(getActivity(), LaporActivity.class);
+                Intent intentLoadNewActivity = new Intent(getActivity().getApplicationContext(), LaporActivity.class);
                 startActivity(intentLoadNewActivity);
             }
         });
-        ImageButton ib_berita = view.findViewById(R.id.ib_berita);
+        ImageButton ib_berita = view.findViewById(R.id.img_berita);
         ib_berita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

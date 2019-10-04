@@ -9,7 +9,7 @@
     <item
         android:id="@+id/simpan"
         android:icon="@drawable/ic_suka_putih"
-        android:title="Simpan"
+        android:title="Suka"
         app:showAsAction="ifRoom" />
 
 
