@@ -6,11 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".feature.donasi.DetailDonasiActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbardonasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+    </android.support.v7.widget.Toolbar>
+
 
     <ImageView
         android:id="@+id/image_view_detail_donasi"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="258dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/pixel_google" />
@@ -33,5 +44,5 @@
         android:layout_height="match_parent"
         android:layout_below="@id/tabLayout" />
 
-
+    </RelativeLayout>
 </RelativeLayout>

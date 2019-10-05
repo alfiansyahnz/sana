@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/navigation_riwayat"
-        android:name="com.sana.ui.riwayat.RiwayatFragment"
+        android:name="com.sana.beranda.riwayat.RiwayatFragment"
         android:label="@string/title_riwayat"
         tools:layout="@layout/fragment_riwayat" />
 
     <fragment
         android:id="@+id/navigation_komunitas"
-        android:name="com.sana.ui.komunitas.KomunitasFragment"
+        android:name="com.sana.beranda.komunitas.KomunitasFragment"
         android:label="@string/title_komunitas"
         tools:layout="@layout/fragment_komunitas" />
 
     <fragment
         android:id="@+id/navigation_beranda"
-        android:name="com.sana.ui.beranda.BerandaFragment"
+        android:name="com.sana.beranda.beranda.BerandaFragment"
         android:label="@string/title_beranda"
         tools:layout="@layout/fragment_beranda" />
 
     <fragment
         android:id="@+id/navigation_akun"
-        android:name="com.sana.ui.akun.AkunFragment"
+        android:name="com.sana.beranda.akun.AkunFragment"
         android:label="@string/title_akun"
         tools:layout="@layout/fragment_akun" />
 </navigation>

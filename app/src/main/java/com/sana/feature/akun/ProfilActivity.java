@@ -3,6 +3,7 @@ package com.sana.feature.akun;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -46,12 +47,16 @@ public class ProfilActivity extends AppCompatActivity {
     private Button btn_logout, btn_photo_upload;
     SessionManager sessionManager;
     String getId;
-    private static String URL_READ = "https://serversana.000webhostapp.com/read_detail.php";
-    private static String URL_EDIT = "https://serversana.000webhostapp.com/edit_detail.php";
-    private static String URL_UPLOAD = "https://serversana.000webhostapp.com/upload.php";
+    private static String URL_READ = "https://lanuginose-numbers.000webhostapp.com/user/read_detail.php";
+    private static String URL_EDIT = "https://lanuginose-numbers.000webhostapp.com/user/edit_detail.php";
+    private static String URL_UPLOAD = "https://lanuginose-numbers.000webhostapp.com/user/upload.php";
     private Menu action;
     private Bitmap bitmap;
     CircleImageView profile_image;
+    SharedPreferences sharedPreferences;
+    String sId, sEmail;
+    public static final String TAG_ID = "sId";
+    public static final String TAG_EMAIL = "sEmail";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,13 +72,26 @@ public class ProfilActivity extends AppCompatActivity {
         btn_photo_upload = findViewById(R.id.btn_photo);
         profile_image = findViewById(R.id.profile_image);
 
+        sharedPreferences = getSharedPreferences(LoginActivity.my_shared_preferences, Context.MODE_PRIVATE);
+        sId = getIntent().getStringExtra(TAG_ID);
+        sEmail = getIntent().getStringExtra(TAG_EMAIL);
+
         HashMap<String, String> user = sessionManager.getUserDetail();
         getId = user.get(sessionManager.ID);
 
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sessionManager.logout();
+                //sessionManager.logout();
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean(LoginActivity.session_status, false);
+                editor.putString(TAG_ID, null);
+                editor.putString(TAG_EMAIL, null);
+                editor.commit();
+
+                Intent intent = new Intent(ProfilActivity.this, LoginActivity.class);
+                finish();
+                startActivity(intent);
             }
         });
 

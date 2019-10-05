@@ -2,21 +2,31 @@ package com.sana.models;
 
 public class Donasi {
 
+    private String id;
     private String judul;
     private String user;
     private String deskripsi;
     private String hari;
     private String tanggal;
+    private String gambar;
     private String join;
-    private int lokasi;
-    private int jumlah;
-    private int gambar;
+    private String lokasi;
+    private String jumlah;
 
-    public int getGambar() {
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getGambar() {
         return gambar;
     }
 
-    public void setGambar(int gambar) {
+    public void setGambar(String gambar) {
         this.gambar = gambar;
     }
 
@@ -68,19 +78,19 @@ public class Donasi {
         this.tanggal = tanggal;
     }
 
-    public int getLokasi() {
+    public String getLokasi() {
         return lokasi;
     }
 
-    public void setLokasi(int lokasi) {
+    public void setLokasi(String lokasi) {
         this.lokasi = lokasi;
     }
 
-    public int getJumlah() {
+    public String getJumlah() {
         return jumlah;
     }
 
-    public void setJumlah(int jumlah) {
+    public void setJumlah(String jumlah) {
         this.jumlah = jumlah;
     }
 }

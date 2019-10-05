@@ -1,6 +1,8 @@
 package com.sana.feature.akun;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.HideReturnsTransformationMethod;
@@ -34,14 +36,22 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText email, password;
-    String sEmail, sPass;
     StringRequest stringRequest2;
     private Button btn_login, btn_forgot;
     private TextView link_regist, teks2;
     private ProgressBar loading;
     private ImageView eye1, eye2;
-    private static String URL_LOGIN = " https://lanuginose-numbers.000webhostapp.com/user/login.php";
+    private static String URL_LOGIN = "https://lanuginose-numbers.000webhostapp.com/user/login.php";
     SessionManager sessionManager;
+    private static final String TAG = LoginActivity.class.getSimpleName();
+    SharedPreferences sharedPreferences;
+    Boolean session = false;
+    String sId, sEmail;
+    public final static String TAG_ID = "sId";
+    public final static String TAG_EMAIL = "sEmail";
+    public static final String my_shared_preferences = "my_shared_preferences";
+    public static final String session_status = "session_status";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,8 +66,20 @@ public class LoginActivity extends AppCompatActivity {
         btn_forgot = findViewById(R.id.btn_forgot);
         link_regist = findViewById(R.id.link_regist);
         teks2 = findViewById(R.id.teks2);
-        //eye1 = findViewById(R.id.eye1);
         eye2 = findViewById(R.id.eye2);
+
+        sharedPreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+        session = sharedPreferences.getBoolean(session_status, false);
+        sId = sharedPreferences.getString(TAG_ID, null);
+        sEmail = sharedPreferences.getString(TAG_EMAIL, null);
+
+        if(session){
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            intent.putExtra(TAG_ID, sId);
+            intent.putExtra(TAG_EMAIL, sEmail);
+            finish();
+            startActivity(intent);
+        }
 
         eye2.bringToFront();
 
@@ -121,14 +143,20 @@ public class LoginActivity extends AppCompatActivity {
 
                                     sessionManager.createSession(nama, email, id);
 
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                    editor.putBoolean(session_status, true);
+                                    editor.putString(TAG_ID, sId);
+                                    editor.putString(TAG_EMAIL, sEmail);
+                                    editor.commit();
+
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    intent.putExtra(TAG_ID, sId);
                                     intent.putExtra("nama", nama);
                                     intent.putExtra("email", email);
                                     startActivity(intent);
                                     finish();
 
                                     loading.setVisibility(View.GONE);
-
 
                                 }
 

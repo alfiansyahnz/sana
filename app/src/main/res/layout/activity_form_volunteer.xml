@@ -56,6 +56,7 @@
 
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/text_input_ktp"
             style="@style/TextContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,9 +73,11 @@
             />
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/text_input_tanggal"
             style="@style/TextContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="date"
             android:hint="DD/MM/YYYY" />
 
         <TextView
@@ -88,6 +91,7 @@
             />
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/text_input_alamat"
             style="@style/TextContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -104,6 +108,7 @@
             />
 
         <RadioGroup
+            android:id="@+id/rb_input"
             style="@style/TextContent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -133,6 +138,7 @@
             />
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/text_input_nohp"
             style="@style/TextContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -150,6 +156,7 @@
             />
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/text_input_email"
             style="@style/TextContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -163,7 +170,7 @@
             android:hint="Saya setuju dengan Syarat &amp; Ketentuan"/>
 
         <Button
-            android:id="@+id/btn_beli"
+            android:id="@+id/btn_ikut_volunteer"
             style="@style/ButtonGeneral"
             android:background="@drawable/bg_round"
             android:layout_width="match_parent"

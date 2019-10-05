@@ -13,23 +13,31 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity android:name=".OnBoardingActivity"/>
-        <activity android:name=".SplashActivity" >
+        <activity android:name=".SplashActivity"
+            android:theme="@style/AppThemeRegist">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".feature.event.EventActivity" />
         <activity android:name=".feature.event.DetailEvent" />
         <activity android:name=".feature.challenge.DetailChallenge" />
-        <activity android:name=".feature.challenge.ChallengeActivity">
-
-        </activity>
-        <activity android:name=".feature.donasi.DonasiProsesActivity" />
-        <activity android:name=".feature.donasi.FormVolunteerActivity" />
-        <activity android:name=".feature.berita.BeritaActivity" />
-        <activity android:name=".feature.berita.DetailArticle" />
-        <activity android:name=".feature.berita.ListNews" />
-        <activity android:name=".feature.akun.RepasswordActivity" />
+        <activity android:name=".feature.challenge.ChallengeActivity"/>
         <activity android:name=".feature.donasi.DonasiActivity" />
+        <activity android:name=".feature.donasi.DonasiProsesActivity" />
+        <activity android:name=".feature.donasi.DetailDonasiActivity"
+            android:theme="@style/AppThemeDetail"/>
+        <activity android:name=".feature.donasi.FormVolunteerActivity" />
+        <activity android:name=".feature.akun.RepasswordActivity" />
+        <activity android:name=".feature.komunitas.KomunitasActivity" />
+        <activity android:name=".feature.komunitas.KomunitasTabLayout" />
+        <activity android:name=".feature.komunitas.DetailKomunitasActivity" />
+        <activity android:name=".feature.komunitas.KomunitasTimelineActivity" />
         <activity android:name=".feature.akun.SandiActivity"/>
+        <activity android:name=".feature.berita.BeritaActivity"/>
         <activity
             android:name=".feature.lapor.LaporActivity" />
         <activity
@@ -44,17 +52,10 @@
 
         <activity android:name=".MainActivity"
             android:theme="@style/AppThemeMain">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".feature.donasi.DetailDonasiActivity">
 
         </activity>
+
+
 
     </application>
 

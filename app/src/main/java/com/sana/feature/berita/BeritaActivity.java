@@ -1,35 +1,48 @@
 package com.sana.feature.berita;
 
-import android.support.constraint.solver.Cache;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AlertDialog;
+import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
+import android.view.inputmethod.EditorInfo;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-
-import com.google.gson.Gson;
-import com.sana.Common.Common;
-import com.sana.Interface.NewsService;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.sana.R;
-import com.sana.adapter.ListSourceAdapter;
-import com.sana.models.WebSite;
+import com.sana.adapter.BeritaAdapter;
+import com.sana.models.Model_Berita;
 
-import dmax.dialog.SpotsDialog;
-import io.paperdb.Paper;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
-public class BeritaActivity extends AppCompatActivity {
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.w3c.dom.Text;
 
-    RecyclerView listWebsite;
-    RecyclerView.LayoutManager layoutManager;
-    NewsService mService;
-    ListSourceAdapter adapter;
-    SpotsDialog dialog;
-    SwipeRefreshLayout swipeLayout;
+import java.util.ArrayList;
+import java.util.List;
+
+public class BeritaActivity extends AppCompatActivity{
+
+    //private final String JSON_URL = "https://gist.githubusercontent.com/aws1994/f583d54e5af8e56173492d3f60dd5ebf/raw/c7796ba51d5a0d37fc756cf0fd14e54434c547bc/anime.json" ;
+    private final String JSON_URL = "https://lanuginose-numbers.000webhostapp.com/berita/index.php";
+    private JsonArrayRequest request ;
+    private RequestQueue requestQueue ;
+    private List<Model_Berita> mData = new ArrayList<>()  ;
+    private RecyclerView recyclerView ;
+    private BeritaAdapter adapter;
 
 
     @Override
@@ -37,93 +50,147 @@ public class BeritaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_berita);
 
-        //Init cache
-        Paper.init(this);
+        getSupportActionBar().setTitle("Berita");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        //Init Service
-        mService = Common.getNewsService();
+        recyclerView = findViewById(R.id.recyclerTemp);
+        /*adapter = new ChallengeAdapter(mData);*/
 
-        //Init View
-        swipeLayout = (SwipeRefreshLayout)findViewById(R.id.swipeRefresh);
-        swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+
+
+        /*LayoutAnimationController animationController = AnimationUtils.loadLayoutAnimation(this,R.anim.layout_animation_slide_right);
+        recyclerView.setLayoutAnimation(animationController);*/
+        jsonrequest();
+
+
+
+
+
+    }
+
+
+    private void jsonrequest() {
+
+        request = new JsonArrayRequest(JSON_URL, new Response.Listener<JSONArray>() {
             @Override
-            public void onRefresh() {
-                loadWebsiteSource(true);
+            public void onResponse(JSONArray response) {
+
+                JSONObject jsonObject  = null ;
+
+                for (int i = 0 ; i < response.length(); i++ ) {
+
+
+                    try {
+                        jsonObject = response.getJSONObject(i) ;
+                        Model_Berita model = new Model_Berita() ;
+                        model.setId(jsonObject.getString("id"));
+                        model.setJudul(jsonObject.getString("judul"));
+                        model.setDeskripsi(jsonObject.getString("deskripsi"));
+                        model.setImg(jsonObject.getString("img"));
+                        mData.add(model);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+
+                }
+
+                setuprecyclerview(mData);
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
             }
         });
 
-        listWebsite = (RecyclerView)findViewById(R.id.list_source);
-        listWebsite.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
-        listWebsite.setLayoutManager(layoutManager);
 
-        dialog = new SpotsDialog(this);
+        requestQueue = Volley.newRequestQueue(BeritaActivity.this);
+        requestQueue.add(request) ;
 
-        loadWebsiteSource(false);
+
     }
 
-    private void loadWebsiteSource(boolean isRefreshed) {
-        if(!isRefreshed)
-        {
-
-            String cache = Paper.book().read("cache");
-            if(cache != null && !cache.isEmpty() && !cache.equals("null")) // if have cache
-            {
-                WebSite webSite = new Gson().fromJson(cache,WebSite.class); // Convert cache from Json to Object
-                adapter = new ListSourceAdapter(getBaseContext(),webSite);
-                adapter.notifyDataSetChanged();
-                listWebsite.setAdapter(adapter);
-            }
-            else //if not have cache
-            {
-                dialog.show();
-                //Fetch new data
-                mService.getSources().enqueue(new Callback<WebSite>() {
-                    @Override
-                    public void onResponse(Call<WebSite> call, Response<WebSite> response) {
-                        adapter = new ListSourceAdapter(getBaseContext(),response.body());
-                        adapter.notifyDataSetChanged();
-                        listWebsite.setAdapter(adapter);
-
-                        //Save to cache
-                        Paper.book().write("cache",new Gson().toJson(response.body()));
-
-                        dialog.dismiss();
-
-                    }
-
-                    @Override
-                    public void onFailure(Call<WebSite> call, Throwable t) {
-
-                    }
-                });
-            }
-        }
-        else // If from Swipe to Refresh
-        {
-            swipeLayout.setRefreshing(true);
-            //Fetch new data
-            mService.getSources().enqueue(new Callback<WebSite>() {
-                @Override
-                public void onResponse(Call<WebSite> call, Response<WebSite> response) {
-                    adapter = new ListSourceAdapter(getBaseContext(),response.body());
-                    adapter.notifyDataSetChanged();
-                    listWebsite.setAdapter(adapter);
-
-                    //Save to cache
-                    Paper.book().write("cache",new Gson().toJson(response.body()));
-
-                    //Dismiss refresh progressing
-                    swipeLayout.setRefreshing(false);
-                }
-
-                @Override
-                public void onFailure(Call<WebSite> call, Throwable t) {
-
-                }
-            });
+    private void setuprecyclerview(List<Model_Berita> mData) {
 
 
-        }
+        adapter = new BeritaAdapter(this,mData) ;
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
     }
+
+    private void runLayoutAnimation(RecyclerView recyclerView){
+        Context context = recyclerView.getContext();
+        LayoutAnimationController layoutAnimationController =
+                AnimationUtils.loadLayoutAnimation(context,R.anim.layout_animation_slide_right);
+
+        recyclerView.setLayoutAnimation(layoutAnimationController);
+        recyclerView.getAdapter().notifyDataSetChanged();
+        recyclerView.scheduleLayoutAnimation();
+
+
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.search_menu, menu);
+
+
+        MenuItem menuItem = menu.findItem(R.id.menu_search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+        return true;
+    }
+
+
+
+
+   /* @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }*/
+
+   /* @Override
+    public boolean onQueryTextChange(String newText) {
+
+        String userInput = newText.toLowerCase();
+        List<Model_Challenge> newList = new ArrayList<>();
+
+       *//* for (Model_Challenge name :mData)
+        {
+            if (name.toLowerCase().contains(userInput))
+            {
+                newList.add(name);
+            }
+        }*//*
+
+        adapter.updateList(newList);
+
+        return true;
+    }*/
 }

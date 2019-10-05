@@ -1,184 +1,323 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
-    tools:context=".MainActivity">
+    android:background="#1a0dac8b">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-            <TextView
-                style="@style/TextContent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textColor="#000000"
-                android:lineSpacingExtra="4sp"
-                tools:text="Konservasi Harimau Sumatra"
-                />
+
         <TextView
+            android:id="@+id/tv_volunteer_judul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/product_sans_bold"
+            android:maxLines="2"
+            android:text="Judul"
+            android:textColor="@android:color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tv_volunteer_lokasi"
             style="@style/TextContent.Subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
             android:textColor="#707070"
             android:lineSpacingExtra="8sp"
-            tools:text="Taman Kota"
+            android:text="Taman Kota"
             />
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
+
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:id="@+id/iv_point"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/icon_like" />
+                android:src="@drawable/ic_point" />
 
             <TextView
-                style="@style/TextContent.Subtitle"
+                android:id="@+id/tv_volunteer_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/iv_point"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="4dp"
+                android:layout_toRightOf="@id/iv_point"
+                android:text="50 point"
+                android:fontFamily="@font/product_sans_bold"
+                android:textColor="#f9ca24"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/img_gabung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="16dp"
+                android:layout_toRightOf="@id/tv_volunteer_user"
+                android:src="@drawable/ic_gabung" />
+
+            <TextView
+                android:id="@+id/tv_volunteer_join"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/img_gabung"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="4dp"
+                android:layout_toRightOf="@id/img_gabung"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="234"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/img_waktu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="16dp"
+                android:layout_toRightOf="@id/tv_volunteer_join"
+                android:src="@drawable/ic_waktu" />
+
+            <TextView
+                android:id="@+id/tv_volunteer_hari"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/img_waktu"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="4dp"
+                android:layout_toRightOf="@id/img_waktu"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="5 hari"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/tv_volunteer_user">
+                <ImageView
+                    style="@style/TextContent.Subtitle"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_waktu" />
+
+                <TextView
+                    android:id="@+id/tv_volunteer_tanggal"
+                    style="@style/TextContent.Subtitle"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#707070"
+                    android:lineSpacingExtra="8sp"
+                    android:text="Senin 22 Agutus 2019 pukul 09.00 - 20.00 WIB "
+                    />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/desk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_point"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="16dp"
-                android:textSize="12sp"
-                tools:text="Oleh Fanny"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/icon_like"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="16dp"
-                />
+                android:fontFamily="@font/product_sans_bold"
+                android:lineSpacingMultiplier="1"
+                android:text="Deskripsi "
+                android:textColor="@android:color/black"
+                android:textSize="16dp" />
 
             <TextView
-                style="@style/TextContent.Subtitle"
+                android:id="@+id/tv_volunteer_deskripsi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="16dp"
-                android:textSize="12sp"
-                tools:text="138"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/icon_like"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="16dp"
-                />
-
-            <TextView
-                style="@style/TextContent.Subtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="16dp"
-                android:textSize="12sp"
-                tools:text="10 Hari"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:src="@drawable/icon_like" />
-
-            <TextView
-                style="@style/TextContent.Subtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:textColor="#707070"
+                android:layout_below="@id/desk"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:fontFamily="@font/product_sans_reguler"
                 android:lineSpacingExtra="8sp"
-                tools:text="Senin 22 Agutus 2019 pukul 09.00 - 20.00 WIB "
-                />
+                android:text="@string/deskripsi"
+                android:textColor="#b4b3b3"
+                android:textSize="14dp" />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/tv_komentar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_volunteer_deskripsi"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="Komentar"
+                android:textColor="#000"
+                android:textSize="16sp" />
 
-        <TextView
-            style="@style/TextContent.Black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/activity_horizontal_margin"
-            android:textSize="14sp"
-            android:textColor="#707070"
-            android:lineSpacingExtra="8sp"
-            tools:text="Deskripsi"
-            />
-        <TextView
-            style="@style/TextContent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:textColor="#a8a8a8"
-            android:lineSpacingExtra="8sp"
-            android:text="Proyek ini adalah bagian dari program atau initiative lebih besar yang dikenal sebagai Program Wilayah Konservasi Tesso Nilo (Tesso Nilo Conservation Landscape Program), dimana di dalamnya termasuk 7 modul: Kejahatan Hutan (Forest Crime), Perlindungan Harimau (Tiger Protection), Pengelolaan Taman (Park Management), Konflik Manusia - Gajah (Human - Elephant Conflict), Hubungan Bisnis (Corporate Relations), Hubungan Komunitas (Community Relations), dan Pengelolaan Proyek (Project Management)."
-            />
+            <Button
+                android:id="@+id/btn_lihat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_volunteer_deskripsi"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:background="@null"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="Lihat Semua"
+                android:textAllCaps="false"
+                android:textColor="#0dac8b"
+                android:textSize="14dp" />
 
-        <TextView
-            style="@style/TextContent.Black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/activity_vertical_margin"
-            android:textSize="14sp"
-            android:textColor="#707070"
-            android:lineSpacingExtra="8sp"
-            tools:text="Komentar"
-            />
-        <android.support.v7.widget.RecyclerView
-            style="@style/TextContent.Black"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        </RelativeLayout>
 
-    <LinearLayout
-        style="@style/TextContent"
+        <RelativeLayout
+            android:id="@+id/bg_komentar"
+            android:layout_width="312dp"
+            android:layout_height="330dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_komentar">
+
+            <ImageView
+                android:id="@+id/img_profil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/img_profil" />
+
+            <TextView
+                android:id="@+id/tv_namaprofil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_toRightOf="@+id/img_profil"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="Nama"
+                android:textColor="#707070"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/tv_donasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_namaprofil"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@+id/img_profil"
+                android:fontFamily="@font/product_sans_reguler"
+                android:text="Rp 1000.000"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_donasi"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/product_sans_reguler"
+                android:lineSpacingExtra="8sp"
+                android:text="Saya mengikuti challenge ini sebagai upaya kepedulian untuk kelestarian bumi"
+                android:textColor="#b4b3b3"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="312dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="75dp"
+            >
+
+
+            <ImageView
+                android:id="@+id/img_profil_komentar"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/img_profil" />
+
+            <LinearLayout
+                android:id="@+id/bg_tulis_komentar"
+                android:layout_width="236dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="75dp"
+                android:layout_toRightOf="@id/img_profil_komentar"
+                android:background="@drawable/bg_tulis_komentar">
+
+                <EditText
+                    android:id="@+id/edt_tulis_komentar"
+                    android:layout_width="184dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:hint="Berikan Komentar ..."
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:id="@+id/img_photo"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="8dp"
+                    android:onClick="photo"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_photo" />
+
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_kirim"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_toRightOf="@id/bg_tulis_komentar"
+                android:layout_marginLeft="8dp"
+                android:layout_centerVertical="true"
+                android:onClick="kirim"
+                android:src="@drawable/ic_kirim" />
+
+        </RelativeLayout>
+
+        <Button
+        android:id="@+id/button_volunteer"
+        style="@style/ButtonGeneral"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <EditText
-            android:id="@+id/edit_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Berikan komentar..." >
-        </EditText>
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="Send" >
-        </Button>
+        android:background="@drawable/bg_round_challenge"
+        android:text="Ikut"
+        />
     </LinearLayout>
-
-        <Button
-            android:id="@+id/button_volunteer"
-            style="@style/ButtonGeneral"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_round_challenge"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:text="@string/volunteer" />
-    </LinearLayout>
-
 </ScrollView>
+
+

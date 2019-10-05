@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp"
+    android:gravity="center_horizontal"
+    android:id="@+id/bg_challenge">
+
+
+
+    <android.support.v7.widget.CardView
+
+        android:layout_centerInParent="true"
+        android:id="@+id/card_donasi"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="6dp"
+        >
+
+
+        <ImageView
+            android:id="@+id/iv_foto"
+            android:layout_width="match_parent"
+            android:layout_height="208dp"
+
+            android:scaleType="centerCrop"
+            android:src="@drawable/hiu">
+
+
+        </ImageView>
+
+        <RelativeLayout
+
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="112dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/bg_donasi_opacity"
+
+            >
+
+            <TextView
+                android:id="@+id/tv_challenge_judul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:fontFamily="@font/product_sans_bold"
+                android:lineSpacingExtra="3sp"
+                android:maxLines="1"
+                android:minLines="1"
+                android:text="Beasiswa Film Pendek: Kampanye
+&apos;Beli yang Baik&apos;"
+                android:ellipsize="end"
+                android:textColor="#000"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_detail_hari_donasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_challenge_judul"
+                android:layout_marginLeft="12dp"
+                android:fontFamily="@font/product_sans_reguler"
+                android:lineSpacingExtra="6sp"
+                android:maxLines="1"
+                android:minLines="1"
+                android:text="4"
+                android:textColor="#b4b3b3"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tv_hari"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_challenge_judul"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@+id/tv_detail_hari_donasi"
+                android:fontFamily="@font/product_sans_reguler"
+                android:lineSpacingExtra="6sp"
+                android:maxLines="1"
+                android:minLines="1"
+                android:text="hari"
+                android:textColor="#b4b3b3"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tv_hari_lagi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_challenge_judul"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@id/tv_hari"
+                android:fontFamily="@font/product_sans_reguler"
+                android:lineSpacingExtra="6sp"
+                android:maxLines="1"
+                android:minLines="1"
+                android:text="lagi"
+                android:textColor="#b4b3b3"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tv_batas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_challenge_judul"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@id/tv_hari_lagi"
+                android:fontFamily="@font/product_sans_reguler"
+                android:lineSpacingExtra="6sp"
+                android:maxLines="1"
+                android:minLines="1"
+                android:text="|"
+                android:textColor="#b4b3b3"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tv_orang_baik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_challenge_judul"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@id/tv_batas"
+                android:fontFamily="@font/product_sans_reguler"
+                android:lineSpacingExtra="6sp"
+                android:maxLines="1"
+                android:minLines="1"
+                android:text="120"
+                android:textColor="#b4b3b3"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tv_orang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_challenge_judul"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@id/tv_orang_baik"
+                android:fontFamily="@font/product_sans_reguler"
+                android:lineSpacingExtra="6sp"
+                android:maxLines="1"
+                android:minLines="1"
+                android:text="orang"
+                android:textColor="#b4b3b3"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tv_baik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_challenge_judul"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@id/tv_orang"
+                android:fontFamily="@font/product_sans_reguler"
+                android:lineSpacingExtra="6sp"
+                android:maxLines="1"
+                android:minLines="1"
+                android:text="baik"
+                android:textColor="#b4b3b3"
+                android:textSize="12dp" />
+
+            <!--   <ImageView
+                   android:id="@+id/img_like"
+                   android:layout_width="16dp"
+                   android:layout_height="16dp"
+                   android:layout_below="@id/tv_challenge_desc"
+                   android:layout_marginStart="8dp"
+                   android:layout_marginTop="15dp"
+                   android:layout_toRightOf="@id/img_challenge"
+                   android:src="@drawable/ic_suka" />-->
+
+            <!-- <TextView
+                 android:id="@+id/tv_suka"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/tv_challenge_desc"
+                 android:layout_marginLeft="4dp"
+                 android:layout_marginTop="14dp"
+                 android:layout_toRightOf="@id/img_like"
+                 android:fontFamily="@font/product_sans_bold"
+                 android:text="21"
+                 android:textColor="#f9ca24"
+                 android:textSize="12dp" />-->
+
+            <!-- <ImageView
+                 android:id="@+id/img_bagi"
+                 android:layout_width="16dp"
+                 android:layout_height="16dp"
+                 android:layout_below="@id/tv_challenge_desc"
+                 android:layout_marginStart="16dp"
+                 android:layout_marginTop="15dp"
+                 android:layout_toRightOf="@id/tv_suka"
+                 android:src="@drawable/ic_bagi" />-->
+
+            <!--  <TextView
+                  android:id="@+id/tv_bagi"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/tv_challenge_desc"
+                  android:layout_marginLeft="4dp"
+                  android:layout_marginTop="14dp"
+                  android:layout_toRightOf="@id/img_bagi"
+                  android:fontFamily="@font/product_sans_bold"
+                  android:text="10"
+                  android:textColor="#f9ca24"
+                  android:textSize="12dp" />-->
+
+
+            <Button
+                android:id="@+id/btn_selengkapnya"
+                android:layout_width="106dp"
+                android:layout_height="28dp"
+                android:layout_below="@id/tv_challenge_judul"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="12dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/bg_round_challenge"
+                android:fontFamily="@font/product_sans_reguler"
+                android:text="Selengkapnya"
+                android:textAllCaps="false"
+                android:textSize="12dp" />
+
+        </RelativeLayout>
+
+
+
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

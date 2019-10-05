@@ -1,21 +1,18 @@
 package com.sana;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
 import android.view.MenuItem;
 
 
-import com.sana.ui.BottomNavigationViewBehavior;
-import com.sana.ui.akun.AkunFragment;
-import com.sana.ui.beranda.BerandaFragment;
-import com.sana.ui.komunitas.KomunitasFragment;
-import com.sana.ui.riwayat.RiwayatFragment;
+import com.sana.beranda.akun.AkunFragment;
+import com.sana.beranda.beranda.BerandaFragment;
+import com.sana.beranda.komunitas.KomunitasFragment;
+import com.sana.beranda.riwayat.RiwayatFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,11 +27,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-//        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) navigation.getLayoutParams();
-//        layoutParams.setBehavior(new BottomNavigationViewBehavior());
 
         fm.beginTransaction().add(R.id.main_container, fragment4).hide(fragment4).commit();
         fm.beginTransaction().add(R.id.main_container, fragment3).hide(fragment3).commit();
