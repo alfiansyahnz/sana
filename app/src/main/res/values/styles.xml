@@ -85,6 +85,22 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppThemeSplash" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">@color/colorBlueGreen</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppThemeOnboard" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimaryDark">@color/colorBlueGreen</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="windowActionBar">true</item>
+    <item name="windowNoTitle">true</item>
+</style>
+
     <style name="AppThemeMain" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimaryDark">@color/colorBlueGreen</item>

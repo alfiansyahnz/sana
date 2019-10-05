@@ -17,15 +17,14 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.sana.MainActivity;
 import com.sana.R;
-import com.sana.feature.berita.BeritaActivity;
+import com.sana.beranda.beranda.BerandaFragment;
 import com.sana.feature.berita.DetailBerita;
 import com.sana.models.Model_Berita;
-
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.MyViewHolder> implements Filterable {
+public class BeritaBerandaAdapter extends RecyclerView.Adapter<BeritaBerandaAdapter.MyViewHolder>{
 
     /*private Context mContext ;*/
     private List<Model_Berita> mData ;
@@ -41,7 +40,7 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.MyViewHold
     }*/
 
 
-    public BeritaAdapter(BeritaActivity beritaActivity, List<Model_Berita> mData) {
+    public BeritaBerandaAdapter(BerandaFragment berandaFragment, List<Model_Berita> mData) {
         /*this.mContext = mContext;*/
         this.mData = mData;
         exampleListFull = new ArrayList<>(mData);
@@ -56,7 +55,7 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.MyViewHold
 
         View view ;
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        view = inflater.inflate(R.layout.model_berita,parent,false) ;
+        view = inflater.inflate(R.layout.model_berita_beranda,parent,false) ;
         /*final MyViewHolder viewHolder = new MyViewHolder(view) ;*/
         /*viewHolder.view_container.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,8 +85,6 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.MyViewHold
         Glide.with(holder.itemView.getContext()).load(mData.get(position).getImg()).apply(option).into(holder.img_thumbnail);
         holder.tv_judul.setText(mData.get(position).getJudul());
         holder.tv_deskripsi.setText(mData.get(position).getDeskripsi());
-
-
         holder.btn_selengkapnya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,13 +107,6 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.MyViewHold
         });
 
 
-        // Load Image from the internet and set it into Imageview using Glide
-
-
-
-
-
-
     }
 
     @Override
@@ -124,43 +114,6 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.MyViewHold
         return mData.size();
     }
 
-    @Override
-    public Filter getFilter() {
-        return exampleFilter;
-    }
-
-    private Filter exampleFilter = new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            List<Model_Berita> filteredList = new ArrayList<>();
-
-            if (constraint == null || constraint.length() == 0){
-                filteredList.addAll(exampleListFull);
-            }else {
-                String filterPattern = constraint.toString().toLowerCase().trim();
-
-                for (Model_Berita item : exampleListFull){
-                    if (item.getJudul().toLowerCase().contains(filterPattern)){
-                        filteredList.add(item);
-                    }
-                }
-            }
-
-            FilterResults results = new FilterResults();
-            results.values = filteredList;
-
-            return results;
-        }
-
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-
-            mData.clear();
-            mData.addAll((List) results.values);
-            notifyDataSetChanged();
-
-        }
-    };
 
 
     public static class MyViewHolder extends RecyclerView.ViewHolder
@@ -189,13 +142,13 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.MyViewHold
             super(itemView);
 
             view_container = itemView.findViewById(R.id.bg_challenge);
-            tv_judul = itemView.findViewById(R.id.tv_berita_judul);
+            tv_judul = itemView.findViewById(R.id.tv_berita_judul_beranda);
 
-            tv_deskripsi = itemView.findViewById(R.id.tv_berita_desc);
-            btn_selengkapnya = itemView.findViewById(R.id.btn_selengkapnya_berita);
-            img_thumbnail = itemView.findViewById(R.id.img_berita);
+            tv_deskripsi = itemView.findViewById(R.id.tv_berita_desc_beranda);
+            btn_selengkapnya = itemView.findViewById(R.id.btn_selengkapnya_berita_beranda);
+            img_thumbnail = itemView.findViewById(R.id.img_berita_beranda);
 
-            recyclerView = itemView.findViewById(R.id.recyclerTemp);
+            recyclerView = itemView.findViewById(R.id.rv_beritaberanda);
 
         }
 

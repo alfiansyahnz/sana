@@ -28,7 +28,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.sana.R;
-import com.sana.SessionManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,7 +43,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ProfilActivity extends AppCompatActivity {
     private static final String TAG = ProfilActivity.class.getSimpleName(); //getting the info
     private TextView nama, email;
-    private Button btn_logout, btn_photo_upload;
+    private Button btn_photo_upload;
     SessionManager sessionManager;
     String getId;
     private static String URL_READ = "https://lanuginose-numbers.000webhostapp.com/user/read_detail.php";
@@ -68,7 +67,7 @@ public class ProfilActivity extends AppCompatActivity {
 
         nama = findViewById(R.id.nama);
         email = findViewById(R.id.email);
-        btn_logout = findViewById(R.id.btn_logout);
+        Button btn_logout = findViewById(R.id.btn_logout);
         btn_photo_upload = findViewById(R.id.btn_photo);
         profile_image = findViewById(R.id.profile_image);
 

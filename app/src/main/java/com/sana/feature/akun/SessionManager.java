@@ -1,24 +1,26 @@
-package com.sana;
+package com.sana.feature.akun;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import com.sana.beranda.akun.AkunFragment;
 import com.sana.feature.akun.LoginActivity;
 import com.sana.feature.akun.ProfilActivity;
+
 
 import java.util.HashMap;
 
 public class SessionManager {
-    SharedPreferences sharedPreferences;
-    public SharedPreferences.Editor editor;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
     public Context context;
-    int PRIVATE_MODE = 0;
+    private int PRIVATE_MODE = 0;
 
     private static final String PREF_NAME = "LOGIN";
     private static final String LOGIN = "IS_LOGIN";
-    public static final String NAME = "NAME";
-    public static final String EMAIL = "EMAIL";
+    private static final String NAME = "NAME";
+    private static final String EMAIL = "EMAIL";
     public static final String ID = "ID";
 
     public SessionManager(Context context) {
@@ -66,7 +68,7 @@ public class SessionManager {
         editor.commit();
         Intent i = new Intent(context, LoginActivity.class);
         context.startActivity(i);
-        ((ProfilActivity) context).finish();
+        ((ProfilActivity)context).finish();
 
     }
 

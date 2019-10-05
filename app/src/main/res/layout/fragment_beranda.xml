@@ -49,7 +49,7 @@
             android:text="Donasi Lingkungan"
             />
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_beranda"
+            android:id="@+id/rv_donasiberanda"
             style="@style/TextContent.Subtitle"
             android:layout_margin="@dimen/activity_vertical_margin"
             android:layout_below="@id/tv_donasi_lingkungan"
@@ -61,7 +61,7 @@
             style="@style/TextContent.Subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rv_beranda"
+            android:layout_below="@id/rv_donasiberanda"
             android:textSize="14sp"
             android:textColor="#000000"
             android:lineSpacingExtra="3sp"
@@ -211,13 +211,13 @@
             </RelativeLayout>
 
 
-           <!-- <LinearLayout
-                android:layout_below="@id/linearLayout2_beranda"
-                android:id="@+id/linearLayout3_beranda"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="10">-->
+            <!-- <LinearLayout
+                 android:layout_below="@id/linearLayout2_beranda"
+                 android:id="@+id/linearLayout3_beranda"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:weightSum="10">-->
 
 
 
@@ -260,40 +260,41 @@
                 android:layout_height="181dp"
                 android:background="@drawable/bg_setengah_round">
 
-            <TextView
-                android:id="@+id/donasi"
-                style="@style/TextContent.Subtitle"
-                android:textColor="@color/colorWhite"
-                android:layout_margin="@dimen/activity_vertical_margin"
-                android:textSize="15sp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Donasi"/>
+                <TextView
+                    android:id="@+id/donasi"
+                    style="@style/TextContent.Subtitle"
+                    android:textColor="@color/colorWhite"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:textSize="15sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Donasi"/>
 
-            <TextView
-                android:id="@+id/isi_donasi"
-                android:layout_below="@id/donasi"
-                style="@style/TextContent.Subtitle"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:textSize="10sp"
-                android:textColor="#ffffff"
-                android:lineSpacingExtra="3sp"
-                android:textStyle="bold"
-                android:text="Donasikan uangmu untuk kepedulian terhadap lingkungan baik flora maupunfauna di bumi tercinta."/>
+                <TextView
+                    android:id="@+id/isi_donasi"
+                    android:layout_below="@id/donasi"
+                    style="@style/TextContent.Subtitle"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:textColor="#ffffff"
+                    android:lineSpacingExtra="3sp"
+                    android:textStyle="bold"
+                    android:text="Donasikan uangmu untuk kepedulian terhadap lingkungan baik flora maupunfauna di bumi tercinta."/>
 
 
 
-            <Button
-                android:layout_below="@id/isi_donasi"
-                style="@style/ButtonGeneral"
-                android:layout_width="104dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/colorWhite"
-                android:background="@drawable/bg_round"
-                android:text="Daftar"
-                android:textColor="@color/colorBlueGreen"/>
+                <Button
+                    android:id="@+id/button_daftar_donasi"
+                    android:layout_below="@id/isi_donasi"
+                    style="@style/ButtonGeneral"
+                    android:layout_width="104dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/colorWhite"
+                    android:background="@drawable/bg_round"
+                    android:text="Daftar"
+                    android:textColor="@color/colorBlueGreen"/>
 
 
             </RelativeLayout>
@@ -312,70 +313,71 @@
         </RelativeLayout>
 
 
-    <RelativeLayout
-
-        android:id="@+id/rcv1_beranda"
-        android:layout_below="@id/linearLayout4_beranda"
-        android:layout_width="match_parent"
-        android:layout_marginTop="24dp"
-        android:layout_height="196dp">
-
         <RelativeLayout
-            android:layout_alignParentRight="true"
-            android:id="@+id/linearLayout5_beranda"
-            android:layout_width="306dp"
-            android:layout_height="196dp"
-            android:orientation="vertical"
-            android:background="@drawable/bg_setengah_round_kuning">
 
-            <TextView
-                android:id="@+id/volunteer"
-                style="@style/TextContent.Subtitle"
-                android:textColor="@color/colorWhite"
-                android:layout_margin="@dimen/activity_vertical_margin"
-                android:textSize="15sp"
+            android:id="@+id/rcv1_beranda"
+            android:layout_below="@id/linearLayout4_beranda"
+            android:layout_width="match_parent"
+            android:layout_marginTop="24dp"
+            android:layout_height="196dp">
+
+            <RelativeLayout
                 android:layout_alignParentRight="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Volunteer"/>
+                android:id="@+id/linearLayout5_beranda"
+                android:layout_width="306dp"
+                android:layout_height="196dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_setengah_round_kuning">
 
-            <TextView
-                android:layout_below="@id/volunteer"
-                android:id="@+id/isi_volunteer"
-                style="@style/TextContent.Subtitle"
-                android:layout_width="186dp"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:textSize="10sp"
-                android:textColor="#ffffff"
-                android:lineSpacingExtra="3sp"
-                android:textStyle="bold"
-                android:layout_alignParentRight="true"
-                android:text="Menjadi relawan di berbagai kegiatan atau organisasi sosial merpakan salah satu pilihan bagikamu yang ingin berbuat lebih secara langsung untuk sesama."/>
+                <TextView
+                    android:id="@+id/volunteer"
+                    style="@style/TextContent.Subtitle"
+                    android:textColor="@color/colorWhite"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:textSize="15sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Volunteer"/>
 
-            <Button
-                android:layout_below="@id/isi_volunteer"
-                android:layout_width="104dp"
-                android:layout_height="26dp"
-                android:layout_marginTop="20dp"
-                android:layout_alignParentRight="true"
-                android:backgroundTint="@color/colorWhite"
-                android:background="@drawable/bg_round"
-                android:text="ikut"
-                android:layout_marginRight="24dp"
-                android:textColor="@color/colorYellow"/>
+                <TextView
+                    android:layout_below="@id/volunteer"
+                    android:id="@+id/isi_volunteer"
+                    style="@style/TextContent.Subtitle"
+                    android:layout_width="186dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textSize="10sp"
+                    android:textColor="#ffffff"
+                    android:lineSpacingExtra="3sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentRight="true"
+                    android:text="Menjadi relawan di berbagai kegiatan atau organisasi sosial merpakan salah satu pilihan bagikamu yang ingin berbuat lebih secara langsung untuk sesama."/>
 
-        </RelativeLayout>
+                <Button
+                    android:id="@+id/button_ikut_volunteer"
+                    android:layout_below="@id/isi_volunteer"
+                    android:layout_width="104dp"
+                    android:layout_height="26dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_alignParentRight="true"
+                    android:backgroundTint="@color/colorWhite"
+                    android:background="@drawable/bg_round"
+                    android:text="ikut"
+                    android:layout_marginRight="24dp"
+                    android:textColor="@color/colorYellow"/>
+
+            </RelativeLayout>
 
 
-        <ImageButton
-            android:id="@+id/img_volunteer"
-            android:layout_width="148dp"
-            android:layout_height="128dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginLeft="16dp"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/volun" />
+            <ImageButton
+                android:id="@+id/img_volunteer"
+                android:layout_width="148dp"
+                android:layout_height="128dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginLeft="16dp"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/volun" />
 
         </RelativeLayout>
 

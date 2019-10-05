@@ -36,11 +36,9 @@ import java.util.List;
 
 public class BeritaActivity extends AppCompatActivity{
 
-    //private final String JSON_URL = "https://gist.githubusercontent.com/aws1994/f583d54e5af8e56173492d3f60dd5ebf/raw/c7796ba51d5a0d37fc756cf0fd14e54434c547bc/anime.json" ;
-    private final String JSON_URL = "https://lanuginose-numbers.000webhostapp.com/berita/index.php";
     private JsonArrayRequest request ;
     private RequestQueue requestQueue ;
-    private List<Model_Berita> mData = new ArrayList<>()  ;
+    private List<Model_Berita> mberita = new ArrayList<>()  ;
     private RecyclerView recyclerView ;
     private BeritaAdapter adapter;
 
@@ -61,7 +59,7 @@ public class BeritaActivity extends AppCompatActivity{
 
         /*LayoutAnimationController animationController = AnimationUtils.loadLayoutAnimation(this,R.anim.layout_animation_slide_right);
         recyclerView.setLayoutAnimation(animationController);*/
-        jsonrequest();
+        jsonrequestberita();
 
 
 
@@ -70,8 +68,10 @@ public class BeritaActivity extends AppCompatActivity{
     }
 
 
-    private void jsonrequest() {
+    private void jsonrequestberita() {
 
+        //private final String JSON_URL = "https://gist.githubusercontent.com/aws1994/f583d54e5af8e56173492d3f60dd5ebf/raw/c7796ba51d5a0d37fc756cf0fd14e54434c547bc/anime.json" ;
+        String JSON_URL = "https://lanuginose-numbers.000webhostapp.com/berita/index.php";
         request = new JsonArrayRequest(JSON_URL, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
@@ -88,7 +88,7 @@ public class BeritaActivity extends AppCompatActivity{
                         model.setJudul(jsonObject.getString("judul"));
                         model.setDeskripsi(jsonObject.getString("deskripsi"));
                         model.setImg(jsonObject.getString("img"));
-                        mData.add(model);
+                        mberita.add(model);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -97,7 +97,7 @@ public class BeritaActivity extends AppCompatActivity{
 
                 }
 
-                setuprecyclerview(mData);
+                setuprecyclerview(mberita);
 
             }
         }, new Response.ErrorListener() {

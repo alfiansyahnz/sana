@@ -14,7 +14,7 @@
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="128dp"
-        app:srcCompat="@drawable/ic_riwayat" />
+        app:srcCompat="@drawable/ic_notifikasi" />
 
     <TextView
         android:id="@+id/slide_heading"
@@ -22,10 +22,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/slide_image"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:textColor="@color/colorGray"
         android:fontFamily="@font/product_sans_bold"
-        android:text="Belum Ada Riwayat"
+        android:text="Belum Ada Notifikasi"
         android:textSize="16dp"
         android:textStyle="bold" />
 
@@ -40,7 +40,7 @@
         android:layout_marginTop="8dp"
         android:paddingRight="43dp"
         android:paddingLeft="43dp"
-        android:text="Kamu belum melakukan aktivitas apapun."
+        android:text="Kamu belum menerima notifikasi apapun."
         android:gravity="center_horizontal"
         android:lineSpacingExtra="3dp"
         android:textSize="14sp" />

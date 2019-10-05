@@ -24,7 +24,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.sana.MainActivity;
 import com.sana.R;
-import com.sana.SessionManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;

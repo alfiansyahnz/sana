@@ -6,7 +6,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/timelineRelative">
 
         <LinearLayout
             android:id="@+id/linearLayout1_kom"
@@ -43,6 +44,7 @@
                 />
         </LinearLayout>
         <RelativeLayout
+            android:id="@+id/putih_bg"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginHorizontal="20dp"
@@ -86,7 +88,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="250dp"
+                android:layout_marginLeft="200dp"
                 android:text="5"
                 android:textSize="15dp"
                 android:textColor="#0dac8b"/>
@@ -96,7 +98,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="265dp"
+                android:layout_marginLeft="220dp"
                 android:text="Postingan"
                 android:textSize="15dp"
                 android:textColor="#0dac8b"/>
@@ -110,5 +112,18 @@
                 android:gravity="center_horizontal|center_vertical"
                 />
         </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/postTimelineLayout"
+            android:layout_marginVertical="15dp"
+            android:layout_below="@+id/putih_bg"
+            >
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerTimeline"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical" />
+        </LinearLayout>
     </RelativeLayout>
 </ScrollView>

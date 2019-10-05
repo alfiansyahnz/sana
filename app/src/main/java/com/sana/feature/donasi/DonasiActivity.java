@@ -5,8 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.view.inputmethod.EditorInfo;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -14,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.sana.R;
+import com.sana.adapter.ChallengeAdapter;
 import com.sana.adapter.DonasiAdapter;
 import com.sana.models.Donasi;
 
@@ -26,8 +31,9 @@ import java.util.List;
 
 public class DonasiActivity extends AppCompatActivity {
 
-    private List<Donasi> mData = new ArrayList<>();
+    private List<Donasi> mDonasi = new ArrayList<>();
     private RecyclerView recyclerView;
+    DonasiAdapter adapter;
 
 
     @Override
@@ -41,10 +47,10 @@ public class DonasiActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerdonasi);
 
-        jsonrequest();
+        jsonrequestdonasi();
     }
 
-    private void jsonrequest() {
+    private void jsonrequestdonasi() {
 
         String JSON_URL = "https://lanuginose-numbers.000webhostapp.com/donasi/index.php";
         JsonArrayRequest request = new JsonArrayRequest(JSON_URL, new Response.Listener<JSONArray>() {
@@ -70,7 +76,7 @@ public class DonasiActivity extends AppCompatActivity {
                         model.setTanggal(jsonObject.getString("tanggal"));
                         model.setLokasi(jsonObject.getString("lokasi"));
 
-                        mData.add(model);
+                        mDonasi.add(model);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -79,7 +85,7 @@ public class DonasiActivity extends AppCompatActivity {
 
                 }
 
-                setuprecyclerview(mData);
+                setuprecyclerview(mDonasi);
 
             }
         }, new Response.ErrorListener() {
@@ -120,6 +126,32 @@ public class DonasiActivity extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.search_menu, menu);
+
+
+        MenuItem menuItem = menu.findItem(R.id.menu_search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
         return true;
     }
 

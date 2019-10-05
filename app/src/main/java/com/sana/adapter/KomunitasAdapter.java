@@ -16,7 +16,9 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.sana.R;
 import com.sana.feature.komunitas.KomunitasActivity;
+import com.sana.feature.komunitas.KomunitasTabLayout;
 import com.sana.feature.komunitas.KomunitasTimelineActivity;
+import com.sana.feature.komunitas.TimelineFragment;
 import com.sana.models.Komunitas;
 
 import java.util.List;
@@ -63,7 +65,7 @@ public class KomunitasAdapter extends RecyclerView.Adapter<KomunitasAdapter.Komu
             @Override
             public void onClick(View v) {
                 Context mContext = v.getContext();
-                Intent i = new Intent(mContext, KomunitasTimelineActivity.class);
+                Intent i = new Intent(mContext, KomunitasTabLayout.class);
                 i.putExtra("nama_komunitas",model_komunitas.getNama());
                 i.putExtra("nama_admin",model_komunitas.getAdmin());
                 i.putExtra("jml_anggota",model_komunitas.getAnggota());

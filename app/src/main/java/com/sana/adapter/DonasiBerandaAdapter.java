@@ -9,45 +9,31 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-
 import com.sana.R;
 import com.sana.beranda.beranda.BerandaFragment;
-import com.sana.feature.challenge.ChallengeActivity;
-import com.sana.feature.challenge.DetailChallenge;
 import com.sana.feature.donasi.DetailDonasiActivity;
-import com.sana.feature.donasi.DonasiActivity;
-import com.sana.feature.donasi.DonasiProsesActivity;
-import com.sana.models.Challenge;
 import com.sana.models.Donasi;
 
-
-import java.util.ArrayList;
 import java.util.List;
-
-import static android.media.CamcorderProfile.get;
 
 /**
  * Created by Aws on 11/03/2018.
  */
 
-public class DonasiAdapter extends RecyclerView.Adapter<DonasiAdapter.MyViewHolder> implements Filterable {
+public class DonasiBerandaAdapter extends RecyclerView.Adapter<DonasiBerandaAdapter.MyViewHolder> {
 
     private List<Donasi> mData ;
-    private List<Donasi> exampleListFull;
     private RequestOptions option;
 
 
-    public DonasiAdapter(List<Donasi> mData) {
+    public DonasiBerandaAdapter(BerandaFragment berandaFragment, List<Donasi> mData) {
         this.mData = mData;
-        exampleListFull = new ArrayList<>(mData);
 
         // Request option for Glide
         option = new RequestOptions().centerCrop().placeholder(R.drawable.bg_round_challenge).error(R.drawable.bg_round_challenge);
@@ -60,7 +46,7 @@ public class DonasiAdapter extends RecyclerView.Adapter<DonasiAdapter.MyViewHold
 
         View view ;
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        view = inflater.inflate(R.layout.model_donasi,parent,false) ;
+        view = inflater.inflate(R.layout.model_donasi_beranda,parent,false) ;
         /*final MyViewHolder viewHolder = new MyViewHolder(view) ;*/
         /*viewHolder.view_container.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +67,7 @@ public class DonasiAdapter extends RecyclerView.Adapter<DonasiAdapter.MyViewHold
 
 
     @Override
-    public void onBindViewHolder (final DonasiAdapter.MyViewHolder holder, int position){
+    public void onBindViewHolder (final DonasiBerandaAdapter.MyViewHolder holder, int position){
 
         final Donasi donasi = mData.get(position);
          Glide.with(holder.itemView.getContext())
@@ -148,45 +134,6 @@ public class DonasiAdapter extends RecyclerView.Adapter<DonasiAdapter.MyViewHold
     public int getItemCount() {
         return mData.size();
     }
-
-    @Override
-    public Filter getFilter() {
-        return exampleFilter;
-    }
-
-    private Filter exampleFilter = new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            List<Donasi> filteredList = new ArrayList<>();
-
-            if (constraint == null || constraint.length() == 0){
-                filteredList.addAll(exampleListFull);
-            }else {
-                String filterPattern = constraint.toString().toLowerCase().trim();
-
-                for (Donasi item : exampleListFull){
-                    if (item.getJudul().toLowerCase().contains(filterPattern)){
-                        filteredList.add(item);
-                    }
-                }
-            }
-
-            FilterResults results = new FilterResults();
-            results.values = filteredList;
-
-            return results;
-        }
-
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-
-            mData.clear();
-            mData.addAll((List) results.values);
-            notifyDataSetChanged();
-
-        }
-    };
-
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         RecyclerView recyclerView;
@@ -195,8 +142,9 @@ public class DonasiAdapter extends RecyclerView.Adapter<DonasiAdapter.MyViewHold
                 tv_jumlah_don ,  tv_lokasi_don , tv_lokasi_vol, tv_judul_list ,tv_hari_list,
                 tv_tanggal_list,tv_join_list , tv_proses;
         ImageView iv_don , iv_vol ,iv_list , iv_proses;
-        CardView view_container;
+        RelativeLayout view_container;
         Button btn_donasi;
+        Button btn_selengkapnya;
 
         MyViewHolder(View itemView) {
             super(itemView);
@@ -217,21 +165,23 @@ public class DonasiAdapter extends RecyclerView.Adapter<DonasiAdapter.MyViewHold
             tv_tanggal_vol = itemView.findViewById(R.id.tv_volunteer_tanggal);
             tv_lokasi_vol = itemView.findViewById(R.id.tv_volunteer_lokasi);
 
-            tv_judul_list = itemView.findViewById(R.id.tv_judul_list);
-            tv_hari_list = itemView.findViewById(R.id.tv_detail_hari_donasi);
-            tv_join_list = itemView.findViewById(R.id.tv_orang_baik);
+            tv_judul_list = itemView.findViewById(R.id.tv_judul_donasi_beranda);
+            tv_hari_list = itemView.findViewById(R.id.tv_detail_hari_donasi_beranda);
+            tv_join_list = itemView.findViewById(R.id.tv_orang_baik_beranda);
 
 
-            iv_list = itemView.findViewById(R.id.iv_foto);
+            iv_list = itemView.findViewById(R.id.iv_donasi_beranda);
             iv_don = itemView.findViewById(R.id.image_view_detail_donasi);
             iv_proses = itemView.findViewById(R.id.iv_donasi_proses);
 
-            view_container = itemView.findViewById(R.id.card_donasi);
-            recyclerView = itemView.findViewById(R.id.recyclerdonasi);
+            view_container = itemView.findViewById(R.id.rl_donasi_beranda);
+            recyclerView = itemView.findViewById(R.id.rv_donasiberanda);
 
             btn_donasi = itemView.findViewById(R.id.button_donasi);
             iv_proses = itemView.findViewById(R.id.iv_donasi_proses);
             tv_proses = itemView.findViewById(R.id.tv_donasi_proses_judul);
+
+            btn_selengkapnya = itemView.findViewById(R.id.btn_selengkapnya_donasi);
 
         }
     }

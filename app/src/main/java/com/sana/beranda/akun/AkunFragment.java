@@ -3,6 +3,7 @@ package com.sana.beranda.akun;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -30,7 +31,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.sana.R;
-import com.sana.SessionManager;
+import com.sana.feature.akun.LoginActivity;
+import com.sana.feature.akun.ProfilActivity;
+import com.sana.feature.akun.SessionManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,13 +46,10 @@ import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-import static android.app.Activity.RESULT_OK;
-
 public class AkunFragment extends Fragment {
-
     private static final String TAG = AkunFragment.class.getSimpleName(); //getting the info
     private TextView nama, email;
-    private Button btn_logout, btn_photo_upload;
+    private Button btn_photo_upload;
     SessionManager sessionManager;
     String getId;
     private static String URL_READ = "https://lanuginose-numbers.000webhostapp.com/user/read_detail.php";
@@ -58,7 +58,10 @@ public class AkunFragment extends Fragment {
     private Menu action;
     private Bitmap bitmap;
     CircleImageView profile_image;
-
+    SharedPreferences sharedPreferences;
+    String sId, sEmail;
+    public static final String TAG_ID = "sId";
+    public static final String TAG_EMAIL = "sEmail";
     public AkunFragment() {
         // Required empty public constructor
     }
@@ -66,15 +69,19 @@ public class AkunFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_akun, container, false);
 
-
+        setHasOptionsMenu(true);
         sessionManager = new SessionManager(getActivity());
         sessionManager.checkLogin();
-        setHasOptionsMenu(true);
+
         nama = view.findViewById(R.id.nama);
         email = view.findViewById(R.id.email);
-        btn_logout = view.findViewById(R.id.btn_logout);
+        Button btn_logout = view.findViewById(R.id.btn_logout);
         btn_photo_upload = view.findViewById(R.id.btn_photo);
         profile_image = view.findViewById(R.id.profile_image);
+
+        sharedPreferences = getActivity().getSharedPreferences(LoginActivity.my_shared_preferences, Context.MODE_PRIVATE);
+        sId = getActivity().getIntent().getStringExtra(TAG_ID);
+        sEmail = getActivity().getIntent().getStringExtra(TAG_EMAIL);
 
         HashMap<String, String> user = sessionManager.getUserDetail();
         getId = user.get(sessionManager.ID);
@@ -82,7 +89,16 @@ public class AkunFragment extends Fragment {
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sessionManager.logout();
+                //sessionManager.logout();
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean(LoginActivity.session_status, false);
+                editor.putString(TAG_ID, null);
+                editor.putString(TAG_EMAIL, null);
+                editor.commit();
+
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                getActivity().finish();
+                startActivity(intent);
             }
         });
 
@@ -92,12 +108,13 @@ public class AkunFragment extends Fragment {
                 chooseFile();
             }
         });
-        return view;}
+        return view;
+    }
 
     //getUserDetail
     private void getUserDetail(){
 
-        final ProgressDialog progressDialog = new ProgressDialog(getContext());
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 
@@ -132,7 +149,7 @@ public class AkunFragment extends Fragment {
                         } catch (JSONException e) {
                             e.printStackTrace();
                             progressDialog.dismiss();
-                            Toast.makeText(getActivity().getApplicationContext(), "Error Reading Detail "+e.toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Error Reading Detail "+e.toString(), Toast.LENGTH_SHORT).show();
                         }
 
                     }
@@ -153,7 +170,7 @@ public class AkunFragment extends Fragment {
             }
         };
 
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         requestQueue.add(stringRequest);
 
     }
@@ -163,20 +180,14 @@ public class AkunFragment extends Fragment {
         super.onResume();
         getUserDetail();
     }
-
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-
-        inflater = getActivity().getMenuInflater();
         inflater.inflate(R.menu.menu_action, menu);
+        super.onCreateOptionsMenu(menu,inflater);
 
         action = menu;
         action.findItem(R.id.menu_save).setVisible(false);
-
-
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -238,14 +249,14 @@ public class AkunFragment extends Fragment {
                             String success = jsonObject.getString("success");
 
                             if (success.equals("1")){
-                                Toast.makeText(getActivity().getApplicationContext(), "Success!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "Success!", Toast.LENGTH_SHORT).show();
                                 sessionManager.createSession(nama, email, id);
                             }
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                             progressDialog.dismiss();
-                            Toast.makeText(getActivity().getApplicationContext(), "Error "+ e.toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Error "+ e.toString(), Toast.LENGTH_SHORT).show();
                         }
 
                     }
@@ -254,7 +265,7 @@ public class AkunFragment extends Fragment {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         progressDialog.dismiss();
-                        Toast.makeText(getActivity().getApplicationContext(), "Error "+ error.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Error "+ error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 })
         {
@@ -283,11 +294,11 @@ public class AkunFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.getData() != null) {
+        if (requestCode == 1 && resultCode == -1 && data != null && data.getData() != null) {
             Uri filePath = data.getData();
             try {
 
-                bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), filePath);
+                bitmap = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(), filePath);
                 profile_image.setImageBitmap(bitmap);
 
             } catch (IOException e) {
@@ -316,13 +327,13 @@ public class AkunFragment extends Fragment {
                             String success = jsonObject.getString("success");
 
                             if (success.equals("1")){
-                                Toast.makeText(getActivity().getApplicationContext(), "Success!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "Success!", Toast.LENGTH_SHORT).show();
                             }
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                             progressDialog.dismiss();
-                            Toast.makeText(getActivity().getApplicationContext(), "Try Again!"+e.toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Try Again!"+e.toString(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
@@ -330,7 +341,7 @@ public class AkunFragment extends Fragment {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         progressDialog.dismiss();
-                        Toast.makeText(getActivity().getApplicationContext(), "Try Again!" + error.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Try Again!" + error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 })
         {

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="match_parent"
+        android:id="@+id/gambar"
+        android:layout_height="495dp"
+        android:background="@drawable/haha" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gambar"
+        android:text="Koneksi Terputus"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/failed_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gambar"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="Periksa sambungan jaringan Anda. Untuk
+kembali mengakses halaman ini."
+        android:textColor="@android:color/darker_gray" />
+
+    <Button
+        android:background="@drawable/roundbutton"
+        android:id="@+id/btnConnect"
+        android:layout_below="@id/gambar"
+        android:layout_marginTop="80dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="104dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:text="Coba Lagi" />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

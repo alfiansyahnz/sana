@@ -31,39 +31,39 @@
                 android:layout_marginLeft="16dp"
                 android:layout_height="90dp"
                 android:scaleType="center"
-                android:id="@+id/img_berita"
+                android:id="@+id/img_berita_beranda"
                 android:src="@drawable/hiu"
                 />
 
-           <!-- <TextView
-                android:id="@+id/tv_gabung"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="10dp"
-                android:layout_toLeftOf="@id/tv_gabung_tulis"
-                android:layout_marginRight="4dp"
-                android:textColor="#f9ca24"
-                android:lineSpacingExtra="11sp"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/product_sans_reguler"
-                android:text="300"
-                />-->
-           <!-- <TextView
-                android:id="@+id/tv_gabung_tulis"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="10dp"
-                android:layout_marginRight="8dp"
-                android:textColor="#f9ca24"
-                android:lineSpacingExtra="11sp"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/product_sans_reguler"
-                android:layout_alignParentRight="true"
-                android:text="orang bergabung"
-                />-->
+            <!-- <TextView
+                 android:id="@+id/tv_gabung"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textSize="10dp"
+                 android:layout_toLeftOf="@id/tv_gabung_tulis"
+                 android:layout_marginRight="4dp"
+                 android:textColor="#f9ca24"
+                 android:lineSpacingExtra="11sp"
+                 android:layout_marginTop="4dp"
+                 android:fontFamily="@font/product_sans_reguler"
+                 android:text="300"
+                 />-->
+            <!-- <TextView
+                 android:id="@+id/tv_gabung_tulis"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textSize="10dp"
+                 android:layout_marginRight="8dp"
+                 android:textColor="#f9ca24"
+                 android:lineSpacingExtra="11sp"
+                 android:layout_marginTop="4dp"
+                 android:fontFamily="@font/product_sans_reguler"
+                 android:layout_alignParentRight="true"
+                 android:text="orang bergabung"
+                 />-->
 
             <TextView
-                android:id="@+id/tv_berita_judul"
+                android:id="@+id/tv_berita_judul_beranda"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14dp"
@@ -76,19 +76,19 @@
                 android:maxLines="2"
                 android:layout_marginTop="16dp"
                 android:textStyle="bold"
-                android:layout_toRightOf="@id/img_berita"
+                android:layout_toRightOf="@id/img_berita_beranda"
                 android:text="Beasiswa Film Pendek: Kampanye
 &apos;Beli yang Baik&apos;"
                 />
             <TextView
-                android:id="@+id/tv_berita_desc"
+                android:id="@+id/tv_berita_desc_beranda"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12dp"
                 android:fontFamily="@font/product_sans_reguler"
                 android:textColor="#a8a8a8"
-                android:layout_below="@id/tv_berita_judul"
-                android:layout_toRightOf="@id/img_berita"
+                android:layout_below="@id/tv_berita_judul_beranda"
+                android:layout_toRightOf="@id/img_berita_beranda"
                 android:layout_marginTop="4dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="8dp"
@@ -149,10 +149,10 @@
 
 
             <Button
-                android:id="@+id/btn_selengkapnya_berita"
+                android:id="@+id/btn_selengkapnya_berita_beranda"
                 android:layout_width="106dp"
                 android:layout_height="28dp"
-                android:layout_below="@id/tv_berita_desc"
+                android:layout_below="@id/tv_berita_desc_beranda"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="7dp"
                 android:layout_marginRight="8dp"

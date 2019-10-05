@@ -25,8 +25,8 @@ public class KomunitasFragment extends Fragment {
         ViewPager viewPager = root.findViewById(R.id.viewPager);
         TabLayout tabLayout = root.findViewById(R.id.tabLayoutkom);
         TabAdapter adapter = new TabAdapter(getActivity().getSupportFragmentManager());
-        adapter.addFragment(new TimelineFragment(), "Timeline");
-        adapter.addFragment(new ChatFragment(), "Chat");
+//        adapter.addFragment(new TimelineFragment(), "Timeline");
+//        adapter.addFragment(new ChatFragment(), "Chat");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
         return root;

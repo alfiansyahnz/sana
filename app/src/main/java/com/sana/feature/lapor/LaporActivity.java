@@ -21,8 +21,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.sana.MainActivity;
 import com.sana.R;
-import com.sana.feature.akun.ProfilActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -120,7 +120,7 @@ public class LaporActivity extends AppCompatActivity {
 
                             if (success.equals("1")) {
                                 Toast.makeText(LaporActivity.this, "Laporan Pengaduan Berhasil Dikirim", Toast.LENGTH_SHORT).show();
-                                Intent intentsucces = new Intent(LaporActivity.this, ProfilActivity.class);
+                                Intent intentsucces = new Intent(LaporActivity.this, MainActivity.class);
                                 startActivity(intentsucces);
                             }
 
