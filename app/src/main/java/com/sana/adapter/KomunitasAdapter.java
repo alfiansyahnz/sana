@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.sana.R;
+import com.sana.beranda.komunitas.KomunitasFragment;
 import com.sana.feature.komunitas.KomunitasActivity;
 import com.sana.feature.komunitas.KomunitasTabLayout;
 import com.sana.feature.komunitas.KomunitasTimelineActivity;
@@ -36,6 +37,13 @@ public class KomunitasAdapter extends RecyclerView.Adapter<KomunitasAdapter.Komu
 //        // Request option for Glide
     option = new RequestOptions().centerCrop().placeholder(R.drawable.rounded_rectangle_orange).error(R.drawable.rounded_rectangle_orange);
 
+    }
+
+    public KomunitasAdapter(KomunitasFragment komunitasFragment, List<Komunitas> isi) {
+        this.isi = isi;
+
+//        // Request option for Glide
+        option = new RequestOptions().centerCrop().placeholder(R.drawable.rounded_rectangle_orange).error(R.drawable.rounded_rectangle_orange);
     }
 
 

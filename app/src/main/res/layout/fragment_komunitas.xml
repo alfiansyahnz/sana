@@ -3,27 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/activity_komunitas"
+    tools:context=".feature.komunitas.KomunitasActivity">
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabLayoutkom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/tab_komuniti_bg"
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginVertical="10dp"
-        app:tabTextColor="#FFF"
-        app:tabMode="fixed"
-        app:tabBackground="@drawable/tab_komuniti_selector"
-        app:tabSelectedTextColor="#0dac8b"
-        app:tabIndicatorHeight="0dp"
-        app:tabRippleColor="@null" />
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_komunitas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tabLayoutkom" />
+        android:scrollbars="vertical" />
 
 
 </RelativeLayout>

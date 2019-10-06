@@ -14,7 +14,7 @@
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="128dp"
-        app:srcCompat="@drawable/ic_riwayat" />
+        app:srcCompat="@drawable/ic_riwayat_a" />
 
     <TextView
         android:id="@+id/slide_heading"

@@ -39,36 +39,41 @@
         </LinearLayout>
         <TextView
             style="@style/TextContent.Subtitle"
+            android:layout_marginTop="16dp"
             android:id="@+id/tv_donasi_lingkungan"
             android:layout_below="@id/linearLayout1_beranda"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:textColor="#000000"
+            android:fontFamily="@font/product_sans_bold"
             android:lineSpacingExtra="3sp"
             android:text="Donasi Lingkungan"
             />
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_donasiberanda"
             style="@style/TextContent.Subtitle"
-            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_marginTop="16dp"
             android:layout_below="@id/tv_donasi_lingkungan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/tv_fitursana"
+            android:layout_marginTop="16dp"
             style="@style/TextContent.Subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/rv_donasiberanda"
             android:textSize="14sp"
+            android:fontFamily="@font/product_sans_bold"
             android:textColor="#000000"
             android:lineSpacingExtra="3sp"
             android:text="Fitur SANA"
             />
 
         <RelativeLayout
+            android:layout_marginTop="16dp"
             android:id="@+id/relativelayout_1"
             style="@style/TextContent.Subtitle"
             android:layout_below="@id/tv_fitursana"
@@ -230,10 +235,11 @@
             style="@style/TextContent.Subtitle"
             android:id="@+id/tv_highlight"
             android:layout_below="@id/relativelayout_1"
-            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
+            android:fontFamily="@font/product_sans_bold"
             android:textColor="#000000"
             android:lineSpacingExtra="3sp"
             android:text="Highlight"
@@ -249,6 +255,7 @@
         </RelativeLayout>
         <RelativeLayout
 
+            android:layout_marginTop="16dp"
             android:id="@+id/linearLayout4_beranda"
             android:layout_below="@id/tv_highlight"
             android:layout_width="match_parent"
@@ -266,6 +273,7 @@
                     android:textColor="@color/colorWhite"
                     android:layout_margin="@dimen/activity_vertical_margin"
                     android:textSize="15sp"
+                    android:fontFamily="@font/product_sans_bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Donasi"/>
@@ -278,8 +286,8 @@
                     android:layout_height="wrap_content"
                     android:textSize="10sp"
                     android:textColor="#ffffff"
+                    android:fontFamily="@font/product_sans_reguler"
                     android:lineSpacingExtra="3sp"
-                    android:textStyle="bold"
                     android:text="Donasikan uangmu untuk kepedulian terhadap lingkungan baik flora maupunfauna di bumi tercinta."/>
 
 
@@ -336,6 +344,7 @@
                     android:layout_margin="@dimen/activity_vertical_margin"
                     android:textSize="15sp"
                     android:layout_alignParentRight="true"
+                    android:fontFamily="@font/product_sans_bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Volunteer"/>
@@ -350,7 +359,7 @@
                     android:textSize="10sp"
                     android:textColor="#ffffff"
                     android:lineSpacingExtra="3sp"
-                    android:textStyle="bold"
+                    android:fontFamily="@font/product_sans_reguler"
                     android:layout_alignParentRight="true"
                     android:text="Menjadi relawan di berbagai kegiatan atau organisasi sosial merpakan salah satu pilihan bagikamu yang ingin berbuat lebih secara langsung untuk sesama."/>
 
@@ -383,8 +392,9 @@
 
         <TextView
             style="@style/TextContent.Subtitle"
+            android:fontFamily="@font/product_sans_bold"
             android:id="@+id/tv_berita"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginTop="16dp"
             android:layout_below="@id/rcv1_beranda"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -396,7 +406,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_beritaberanda"
             style="@style/TextContent.Subtitle"
-            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_margin="16dp"
             android:layout_below="@id/tv_berita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

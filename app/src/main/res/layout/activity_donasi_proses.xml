@@ -67,82 +67,115 @@
 
         <TextView
             android:id="@+id/text_view_judul_metode_pembayaran"
-            style="@style/TextContent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/line2"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:lineSpacingExtra="3sp"
+            android:fontFamily="@font/product_sans_bold"
             android:textColor="#707070"
-            android:textSize="11sp"
+            android:textSize="14sp"
             tools:text="Pilih Metode Pembayaran"
             tools:ignore="NotSibling" />
 
 
 
-            <android.support.v7.widget.CardView
+        <android.support.v7.widget.CardView
+            android:layout_below="@id/text_view_judul_metode_pembayaran"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#32FFFFFF"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            app:cardCornerRadius="5dp">
+
+            <LinearLayout
+                android:id="@+id/visa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="#ffffff"
-                android:clipChildren="false"
-                android:clipToPadding="false"
-                android:divider="@android:color/transparent"
-                android:dividerHeight="0.0px"
-                app:cardCornerRadius="5dp">
+                android:layout_marginBottom="15dp"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/visa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:orientation="vertical">
+
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/rightmark2"
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:src="@drawable/ic_right" />
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-
+                        android:layout_weight="1"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:id="@+id/rightmark2"
-                            android:layout_width="13dp"
-                            android:layout_height="13dp"
-                            android:layout_gravity="center"
-                            android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_right" />
-
                         <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
+                            android:id="@+id/bg_kartu_kredit"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/bg_tulis_komentar" >
+
+                            <TextView
+                                android:id="@+id/karyu_kredit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/product_sans_bold"
+                                android:textSize="12sp"
+                                android:layout_marginLeft="16dp"
+                                android:text="Kartu Kredit/Bank Transfer"
+
+                                />
 
                             <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="70dp"
-                                android:src="@drawable/ic_fanny" />
-                        </LinearLayout>
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/img_bankbni"
+                                android:layout_marginLeft="20dp"
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
+
+                                />
+
 
                             <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="70dp"
-                                android:src="@drawable/ic_fanny" />
-                        </LinearLayout>
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/img_bankvisa"
+                                android:layout_marginLeft="10dp"
 
+
+                                />
+
+
+
+
+
+                        </LinearLayout>
                     </LinearLayout>
-
 
                 </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+
+        </android.support.v7.widget.CardView>
+
+
 
 
 

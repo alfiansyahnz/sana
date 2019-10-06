@@ -1,5 +1,6 @@
 package com.sana.beranda.beranda;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.app.Fragment;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -22,6 +24,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.sana.NotifikasiActivity;
 import com.sana.R;
 import com.sana.feature.berita.BeritaActivity;
 import com.sana.feature.challenge.ChallengeActivity;
@@ -53,10 +56,10 @@ public class BerandaFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_beranda, container, false);
 
         setHasOptionsMenu(true);
+
         Toolbar toolbar = view.findViewById(R.id.toolbarberanda);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
-
         recyclerViewberita = view.findViewById(R.id.rv_beritaberanda);
         recyclerViewdonasi = view.findViewById(R.id.rv_donasiberanda);
 
@@ -114,13 +117,14 @@ public class BerandaFragment extends Fragment {
         });
 
         Button btn_volunteer = view.findViewById(R.id.button_ikut_volunteer);
-        btn_donasi.setOnClickListener(new View.OnClickListener() {
+        btn_volunteer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentLoadNewActivity = new Intent(getActivity().getApplicationContext(), DonasiActivity.class);
                 startActivity(intentLoadNewActivity);
             }
         });
+
 
         return view;
     }
@@ -249,13 +253,8 @@ public class BerandaFragment extends Fragment {
 
         Intent i;
         switch (item.getItemId()) {
-            case R.id.mKomunitas:
-                i = new Intent(getActivity(), Komunitas.class);
-                startActivity(i);
-                return true;
-
             case R.id.mNotifikasi:
-                i = new Intent(getActivity(), RiwayatFragment.class);
+                i = new Intent(getActivity(), NotifikasiActivity.class);
                 startActivity(i);
                 return true;
         }

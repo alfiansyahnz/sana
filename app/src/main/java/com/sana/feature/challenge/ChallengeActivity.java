@@ -43,6 +43,7 @@ public class ChallengeActivity extends AppCompatActivity{
     private ChallengeAdapter adapter;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,4 +1,4 @@
-package com.sana.FirebaseParticle;
+package com.sana;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

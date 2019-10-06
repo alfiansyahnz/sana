@@ -1,4 +1,4 @@
-package com.sana.FirebaseParticle;
+package com.sana;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

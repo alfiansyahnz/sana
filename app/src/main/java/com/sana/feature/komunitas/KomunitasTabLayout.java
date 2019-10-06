@@ -17,6 +17,10 @@ public class KomunitasTabLayout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_komunitas_tab_layout);
 
+        this.getSupportActionBar().setTitle("Komunitas");
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        this.getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         ViewPager viewPager = findViewById(R.id.viewPager);
         TabLayout tabLayout = findViewById(R.id.tabLayoutkom);
         TabAdapter adapter = new TabAdapter(getSupportFragmentManager());
@@ -25,5 +29,10 @@ public class KomunitasTabLayout extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

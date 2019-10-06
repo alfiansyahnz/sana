@@ -47,7 +47,7 @@
                 android:layout_height="24dp"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/ic_point" />
+                android:src="@drawable/ic_fanny" />
 
             <TextView
                 android:id="@+id/tv_volunteer_user"
@@ -107,32 +107,36 @@
                 android:text="5 hari"
                 android:textSize="12sp" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_below="@id/tv_volunteer_user">
                 <ImageView
                     style="@style/TextContent.Subtitle"
+                    android:id="@+id/img_kalender"
                     android:layout_marginTop="5dp"
-                    android:layout_marginStart="25dp"
+                    android:layout_marginStart="24dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_waktu" />
+                    android:src="@drawable/ic_kalendar" />
 
                 <TextView
                     android:id="@+id/tv_volunteer_tanggal"
                     style="@style/TextContent.Subtitle"
-                    android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="#707070"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/img_kalender"
+                    android:layout_toRightOf="@id/img_kalender"
                     android:lineSpacingExtra="8sp"
                     android:text="Senin 22 Agutus 2019 pukul 09.00 - 20.00 WIB "
-                    />
+                    android:textColor="#707070"
+                    android:textSize="12sp" />
 
-            </LinearLayout>
+            </RelativeLayout>
 
 
             <TextView
@@ -141,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/iv_point"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="48dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/product_sans_bold"
@@ -310,13 +314,13 @@
         </RelativeLayout>
 
         <Button
-        android:id="@+id/button_volunteer"
-        style="@style/ButtonGeneral"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_round_challenge"
-        android:text="Ikut"
-        />
+            android:id="@+id/button_volunteer"
+            style="@style/ButtonGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_round_challenge"
+            android:text="Ikut"
+            />
     </LinearLayout>
 </ScrollView>
 

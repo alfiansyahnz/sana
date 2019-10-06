@@ -16,6 +16,12 @@
             android:theme="@style/AppThemeSplash"/>
         <activity android:name=".SplashActivity"
             android:theme="@style/AppThemeSplash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity android:name=".feature.event.EventActivity" />
@@ -29,20 +35,17 @@
         <activity android:name=".feature.donasi.FormVolunteerActivity" />
         <activity android:name=".feature.akun.RepasswordActivity" />
         <activity android:name=".feature.komunitas.KomunitasActivity">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.DEFAULT" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
 
         </activity>
         <activity android:name=".feature.komunitas.KomunitasTabLayout" />
+        <activity android:name=".feature.komunitas.DetailKomunitasActivity" />
+        <activity android:name=".NoNetwork" />
         <activity android:name=".feature.akun.SandiActivity"/>
         <activity android:name=".feature.berita.BeritaActivity"/>
         <activity android:name=".feature.berita.DetailBerita"/>
         <activity android:name=".feature.komunitas.Timeline_Post_Activity"/>
         <activity android:name=".feature.komunitas.KomunitasTimelineActivity"/>
+        <activity android:name=".NotifikasiActivity"/>
         <activity
             android:name=".feature.lapor.LaporActivity" />
         <activity

@@ -72,7 +72,7 @@ public class FormVolunteerActivity extends AppCompatActivity {
             }
         });
 
-        getSupportActionBar().setTitle("Isi Laporan");
+        getSupportActionBar().setTitle("Isi Formulir");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
